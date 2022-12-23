@@ -1,10 +1,8 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { AppShell } from "@mantine/core";
+import { Outlet } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
-  return <AppShell>hello</AppShell>;
+  return <MainLayout />;
 }
 
 export default App;
