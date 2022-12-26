@@ -1,5 +1,6 @@
 import { AppShell, MediaQuery } from "@mantine/core";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import SearchHeader from "../components/shared/SearchHeader";
 import SideNav from "../components/shared/SideNav";
@@ -26,7 +27,11 @@ const MainLayout = () => {
       <div className="px-2">
         <div className="strict-width">
           <SearchHeader menuToggle={{ opened, setOpened }} />
-          <h1 className="text-9xl ">hey Bro</h1>
+
+          {/* outlet */}
+          <section className="mt-12">
+            <Outlet />
+          </section>
         </div>
       </div>
     </AppShell>

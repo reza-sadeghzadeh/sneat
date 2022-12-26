@@ -29,7 +29,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   return (
     <header>
       {/* search bar */}
-      <div className="bg-white py-2 flex justify-start items-center rounded-lg main-shadow px-8">
+      <div className="bg-white py-2 flex justify-start items-center rounded-md main-shadow px-6">
         <MediaQuery largerThan={"lg"} styles={{ display: "none" }}>
           <Burger
             size={20}
@@ -47,11 +47,11 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            className="py-3 w-full outline-none rounded-xl mx-2 px-2 text-brand-mainTextColor/80 grow font-normal text-md peer"
+            className="py-2.5 w-full outline-none rounded-xl mx-2 px-2 text-brand-mainTextColor/80 grow font-normal text-md peer"
           />
           {!value && (
             <label
-              className="absolute peer-focus:translate-x-1 transition-all left-4 top-3 pointer-events-none text-brand-mainTextColor/50"
+              className="absolute text-md peer-focus:translate-x-1 transition-all left-4 top-3 pointer-events-none text-brand-mainTextColor/50"
               htmlFor="searchbar"
             >
               Search...

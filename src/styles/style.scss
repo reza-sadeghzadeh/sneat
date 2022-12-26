@@ -1,0 +1,27 @@
+.nav-item {
+  @apply flex justify-start items-center w-full font-normal py-2.5 px-4 rounded-md transition-all;
+
+  &:hover {
+    @apply bg-brand-mainTextColor/10;
+  }
+
+  &.active {
+    @apply bg-brand-primaryTextColor/10 font-semibold text-brand-primaryTextColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      right: 0;
+      width: 4px;
+      height: 90%;
+      background: theme("colors.brand.primaryTextColor");
+    }
+  }
+}
+
+.nav-item-link-holder {
+  @apply pr-4 text-brand-mainTextColor font-medium relative;
+}

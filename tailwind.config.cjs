@@ -7,6 +7,7 @@ module.exports = {
         brand: {
           mainTextColor: "#697a8d",
           bodyColor: "#f5f5f9",
+          primaryTextColor:"#696cff"
         },
       },
     },
