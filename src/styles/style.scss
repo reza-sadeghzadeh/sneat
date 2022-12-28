@@ -1,5 +1,5 @@
 .nav-item {
-  @apply flex justify-start items-center w-full font-normal py-2.5 px-4 rounded-md transition-all;
+  @apply flex justify-start items-center w-full font-normal py-3 px-4 rounded-md transition-all;
 
   &:hover {
     @apply bg-brand-mainTextColor/10;

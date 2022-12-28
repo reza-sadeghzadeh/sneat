@@ -6,21 +6,21 @@ import {
   Navbar,
   Text,
   useMantineTheme,
-} from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import React from "react";
-import { BiHomeCircle, BiLeftArrow } from "react-icons/bi";
-import NavItem from "../NavItem";
+} from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
+import React from "react"
+import { BiHomeCircle, BiLeftArrow } from "react-icons/bi"
+import NavItem from "../NavItem"
 interface SearchHeaderProps {
   menuToggle: {
-    opened: boolean;
-    setOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  };
+    opened: boolean
+    setOpened: React.Dispatch<React.SetStateAction<boolean>>
+  }
 }
 
 const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
-  const theme = useMantineTheme();
-  const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`);
+  const theme = useMantineTheme()
+  const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
   return (
     <Navbar
       sx={{ left: matches ? "0" : menuToggle.opened ? "0" : "-100%" }}
@@ -30,9 +30,9 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       pl={"md"}
     >
       {/* logo */}
-      <Box className="flex items-center justify-start mt-2 px-1 py-4">
+      <Box className="flex items-center justify-start mt-2 px-1 py-3">
         <Image
-          height={38}
+          height={36}
           width={22}
           withPlaceholder
           alt="logo"
@@ -68,7 +68,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         </ul>
       </Box>
     </Navbar>
-  );
-};
+  )
+}
 
-export default SideNav;
+export default SideNav

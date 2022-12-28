@@ -6,26 +6,26 @@ import {
   Menu,
   Text,
   TextInput,
-} from "@mantine/core";
-import React, { useState } from "react";
+} from "@mantine/core"
+import React, { useState } from "react"
 import {
   BiSearch,
   BiPowerOff,
   BiUser,
   BiCog,
   BiCreditCard,
-} from "react-icons/bi";
-import { Link } from "react-router-dom";
+} from "react-icons/bi"
+import { Link } from "react-router-dom"
 
 interface SearchHeaderProps {
   menuToggle: {
-    opened: boolean;
-    setOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  };
+    opened: boolean
+    setOpened: React.Dispatch<React.SetStateAction<boolean>>
+  }
 }
 
 const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("")
   return (
     <header>
       {/* search bar */}
@@ -156,7 +156,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         </Menu>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default SearchHeader;
+export default SearchHeader
