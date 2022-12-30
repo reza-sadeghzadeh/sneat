@@ -2,15 +2,12 @@ import { Button } from "@mantine/core"
 import React from "react"
 import { useTranslation } from "react-i18next"
 
+import useI18n from "../hooks/useI18n"
+
 const CardsPage = () => {
   const { t, i18n } = useTranslation()
-  return (
-    <div>
-      <Button onClick={() => i18n.changeLanguage("fa")} variant="subtle">
-        {t("hey")}
-      </Button>
-    </div>
-  )
+  const { setLng } = useI18n()
+  return <div></div>
 }
 
 export default CardsPage

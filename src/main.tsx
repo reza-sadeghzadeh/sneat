@@ -8,7 +8,8 @@ import "./styles/tailwind.scss"
 import { BrowserRouter } from "react-router-dom"
 import RTLProvider from "./utils/RTLProvider"
 import { RTLContextProvider } from "./contexts/RTLContext"
-import initI18n from "./utils/i18n"
+import initI18n from "./boot/i18n"
+import { I18nProvider } from "./utils/RTLi18n"
 
 // initializing the internationalization
 initI18n()
@@ -18,9 +19,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
       <RTLContextProvider>
         <RTLProvider>
-          <Suspense fallback="Loading...">
-            <App />
-          </Suspense>
+          <I18nProvider>
+            <Suspense fallback="Loading...">
+              <App />
+            </Suspense>
+          </I18nProvider>
         </RTLProvider>
       </RTLContextProvider>
     </BrowserRouter>

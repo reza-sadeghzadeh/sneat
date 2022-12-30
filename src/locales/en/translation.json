@@ -1,0 +1,15 @@
+{
+  "side_nav": {
+    "dashboard": "Dashboard",
+    "cards": "Cards"
+  },
+  "search_header": {
+    "search": "Search...",
+    "profile": {
+      "my_profile": "My Profile",
+      "settings": "Settings",
+      "billing": "Billing",
+      "log_out": "Log Out"
+    }
+  }
+}

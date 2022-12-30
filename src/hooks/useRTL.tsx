@@ -1,5 +1,5 @@
-import React, { useContext } from "react"
-import { RTLContext } from "../contexts/RTLContext"
+import { useContext } from "react"
+import { RTLContext } from "../contexts"
 
 const useRTL = () => useContext(RTLContext)
 

@@ -6,17 +6,21 @@ import {
   MediaQuery,
   Menu,
   Text,
-  TextInput,
 } from "@mantine/core"
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import {
-  BiSearch,
-  BiPowerOff,
-  BiUser,
   BiCog,
   BiCreditCard,
+  BiPowerOff,
+  BiSearch,
+  BiUser,
+  BiWorld,
 } from "react-icons/bi"
 import { Link } from "react-router-dom"
+
+import useI18n from "../../hooks/useI18n"
+import { languageProfiles, Lngs } from "../../utils/language"
 
 interface SearchHeaderProps {
   menuToggle: {
@@ -27,6 +31,9 @@ interface SearchHeaderProps {
 
 const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   const [value, setValue] = useState("")
+  const { lng, setLng } = useI18n()
+  const { t } = useTranslation()
+
   return (
     <header>
       {/* search bar */}
@@ -56,10 +63,68 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
               className="absolute text-md peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3 pointer-events-none text-brand-mainTextColor/50"
               htmlFor="searchbar"
             >
-              Search...
+              {t("search_header.search")}
             </label>
           )}
         </div>
+
+        <Menu
+          styles={{
+            item: {
+              padding: "0.8rem 0.6rem",
+              fontSize: "0.9rem",
+            },
+          }}
+          transition="pop-top-right"
+          position="bottom-end"
+          shadow="md"
+          width={150}
+          classNames={{ itemLabel: "text-brand-mainTextColor" }}
+        >
+          <Menu.Target>
+            <Box
+              w={80}
+              sx={{ marginRight: 24 }}
+              className="flex justify-start items-center cursor-pointer"
+            >
+              <h5 className="text-sm mx-2">
+                {languageProfiles.find((p) => p.locale === lng)?.native}
+              </h5>
+
+              <BiWorld size={20} />
+            </Box>
+          </Menu.Target>
+
+          <Menu.Dropdown>
+            {languageProfiles.map((p) => (
+              <Menu.Item
+                key={p.native}
+                disabled={lng === p.locale}
+                className="disabled:cursor-not-allowed"
+                style={{
+                  padding: "0.7rem 1rem",
+                }}
+                icon={<BiUser size={20} className="text-brand-mainTextColor" />}
+                onClick={() => {
+                  switch (p.locale) {
+                    case Lngs.FA:
+                      setLng(Lngs.FA)
+                      break
+
+                    case Lngs.EN:
+                      setLng(Lngs.EN)
+                      break
+
+                    default:
+                      break
+                  }
+                }}
+              >
+                {p.native}
+              </Menu.Item>
+            ))}
+          </Menu.Dropdown>
+        </Menu>
 
         <Menu
           styles={{
@@ -121,12 +186,12 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             <Menu.Item
               icon={<BiUser size={20} className="text-brand-mainTextColor" />}
             >
-              My Profile
+              {t("search_header.profile.my_profile")}
             </Menu.Item>
             <Menu.Item
               icon={<BiCog size={20} className="text-brand-mainTextColor" />}
             >
-              Settings
+              {t("search_header.profile.settings")}
             </Menu.Item>
             <Menu.Item
               icon={
@@ -141,7 +206,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
                 </div>
               }
             >
-              Billing
+              {t("search_header.profile.billing")}
             </Menu.Item>
             <Menu.Divider />
 
@@ -151,7 +216,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
                   <BiPowerOff size={20} className="text-brand-mainTextColor" />
                 }
               >
-                Log Out
+                {t("search_header.profile.log_out")}
               </Menu.Item>
             </Link>
           </Menu.Dropdown>

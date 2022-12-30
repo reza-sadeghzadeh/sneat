@@ -4,7 +4,7 @@ import rtlPlugin from "stylis-plugin-rtl"
 import { RTLContextProvider } from "../contexts/RTLContext"
 import { useRTL } from "../hooks"
 
-import defaultTheme from "./customTheme"
+import defaultTheme from "../boot/customTheme"
 
 const RTLProvider = ({ children }: { children: ReactNode }) => {
   const { RTL } = useRTL()

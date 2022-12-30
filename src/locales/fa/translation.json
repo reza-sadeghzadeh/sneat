@@ -1,0 +1,15 @@
+{
+  "side_nav": {
+    "dashboard": "داشبورد",
+    "cards": "کارت ها"
+  },
+  "search_header": {
+    "search": "جستجو...",
+    "profile": {
+      "my_profile": "پروفایل من",
+      "settings": "تنظیمات",
+      "billing": "فاکتورها",
+      "log_out": "خروج"
+    }
+  }
+}
