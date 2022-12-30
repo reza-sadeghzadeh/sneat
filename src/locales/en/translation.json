@@ -2,7 +2,14 @@
   "side_nav": {
     "dashboard": "Dashboard",
     "cards": "Cards",
-    "layouts": "Layouts"
+    "layouts": {
+      "_": "Layouts",
+      "with_out_menu": "With Out Menu",
+      "with_out_navbar": "With Out Nav Bar",
+      "container": "Container",
+      "fluid": "Fluid",
+      "blank": "Blank"
+    }
   },
   "search_header": {
     "search": "Search...",

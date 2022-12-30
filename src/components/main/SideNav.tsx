@@ -98,16 +98,28 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         <li className="nav-item-link-holder">
           <NavItemExpansible
             icon={<BiLayout />}
-            label={t("side_nav.layouts")}
+            label={t("side_nav.layouts._")}
             basePath="/layouts"
             childRoutes={[
               {
-                label: "karaj",
-                to: "/a",
+                label: t("side_nav.layouts.with_out_menu"),
+                to: "/with_out_menu",
               },
               {
-                label: "tehran",
-                to: "/b",
+                label: t("side_nav.layouts.with_out_navbar"),
+                to: "/with_out_navbar",
+              },
+              {
+                label: t("side_nav.layouts.container"),
+                to: "/container",
+              },
+              {
+                label: t("side_nav.layouts.fluid"),
+                to: "/fluid",
+              },
+              {
+                label: t("side_nav.layouts.blank"),
+                to: "/blank",
               },
             ]}
           />

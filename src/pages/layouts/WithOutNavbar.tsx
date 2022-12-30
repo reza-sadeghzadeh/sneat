@@ -1,9 +1,9 @@
 import { Button, Text } from "@mantine/core"
 import React from "react"
-import SEOutil from "../components/misc/SEOutil"
-import { useRTL } from "../hooks"
+import SEOutil from "../../components/misc/SEOutil"
+import { useRTL } from "../../hooks"
 
-const BPage = () => {
+const WithOutNavbar = () => {
   const { setRTL } = useRTL()
   return (
     <>
@@ -90,4 +90,4 @@ const BPage = () => {
   )
 }
 
-export default BPage
+export default WithOutNavbar

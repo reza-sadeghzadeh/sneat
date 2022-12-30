@@ -2,7 +2,14 @@
   "side_nav": {
     "dashboard": "داشبورد",
     "cards": "کارت ها",
-    "layouts": "قالب ها"
+    "layouts": {
+      "_": "قالب ها",
+      "with_out_menu": "با منوی بالا",
+      "with_out_navbar": "با منوی کناری",
+      "container": "دربرگیرنده",
+      "fluid": "شناور",
+      "blank": "خالی"
+    }
   },
   "search_header": {
     "search": "جستجو...",

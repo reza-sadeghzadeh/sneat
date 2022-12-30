@@ -1,17 +1,30 @@
 import { Button, Text } from "@mantine/core"
 import React from "react"
-import SEOutil from "../components/misc/SEOutil"
-import { useRTL } from "../hooks"
+import SEOutil from "../../components/misc/SEOutil"
+import { useRTL } from "../../hooks"
 
-const APage = () => {
+const Blank = () => {
   const { setRTL } = useRTL()
   return (
     <>
       <SEOutil title="Dashboard" />
 
       <Text className="mainTextColor text-xl text-justify p-4">
-        A Lorem A ipsum dolor sit ame At consec A tetur adipi A sicing elit A .
-        Aut facere modi A Lorem A ipsum dolor sit ame At consec A tetur adipi A
+        ContainerPage ContainerPage dolorContainerPage A tetur adipi A sicing
+        elit A . ContainerPage ContainerPage dolorContainerPage A tetur adipi A
+        sicing elit A . ContainerPage ContainerPage dolorContainerPage A tetur
+        adipi A sicing elit A . ContainerPage ContainerPage dolorContainerPage A
+        tetur adipi A sicing elit A . ContainerPage ContainerPage
+        dolorContainerPage A tetur adipi A sicing elit A . ContainerPage
+        ContainerPage dolorContainerPage A tetur adipi A sicing elit A .
+        ContainerPage ContainerPage dolorContainerPage A tetur adipi A sicing
+        elit A . ContainerPage ContainerPage dolorContainerPage A tetur adipi A
+        sicing elit A . ContainerPage ContainerPage dolorContainerPage A tetur
+        adipi A sicing elit A . ContainerPage ContainerPage dolorContainerPage A
+        tetur adipi A sicing elit A . ContainerPage ContainerPage
+        dolorContainerPage A tetur adipi A sicing elit A . ContainerPage
+        ContainerPage dolorContainerPage A tetur adipi A sicing elit A . Aut
+        facere modi A Lorem A ipsum dolor sit ame At consec A tetur adipi A
         sicing elit A . Aut facere modi A Lorem A ipsum dolor sit ame At consec
         A tetur adipi A sicing elit A . Aut facere modi A Lorem A ipsum dolor
         sit ame At consec A tetur adipi A sicing elit A . Aut facere modi A
@@ -87,4 +100,4 @@ const APage = () => {
   )
 }
 
-export default APage
+export default Blank
