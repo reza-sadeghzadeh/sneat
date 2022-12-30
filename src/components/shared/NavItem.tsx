@@ -11,10 +11,10 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ icon, name, to }) => {
   return (
     <Box>
-      <NavLink to={to} className={`my-0.5 py-1 nav-item`}>
+      <NavLink to={to} className="nav-item">
         <>
           <Box sx={{ transform: "scale(1.2)" }}>{icon}</Box>
-          <Text size={"sm"} className="ml-3">
+          <Text sx={{ marginLeft: 12 }} size={"sm"}>
             {name}
           </Text>
         </>

@@ -9,6 +9,7 @@ import SideNav from "../components/main/SideNav"
 const MainLayout = () => {
   const [opened, setOpened] = useState(false)
   const [scrollLocked, setScrollLocked] = useScrollLock()
+  const theme = useMantineTheme()
   const location = useLocation()
 
   useEffect(() => {
@@ -41,9 +42,7 @@ const MainLayout = () => {
           {opened && (
             <Overlay
               onClick={() => setOpened(false)}
-              sx={{ zIndex: 101 }}
-              className="bg-slate-500"
-              // gradient={`linear-gradient(105deg, ${theme.black} 20%, #312f2f 50%, ${theme.colors.gray[4]} 100%)`}
+              sx={{ zIndex: 101, backgroundColor: theme.colors.gray[7] }}
             />
           )}
           {/* outlet */}

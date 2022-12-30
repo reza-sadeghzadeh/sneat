@@ -1,11 +1,16 @@
-import { Text } from "@mantine/core"
+import { Button, Text } from "@mantine/core"
 import React from "react"
 import SEOutil from "../components/misc/SEOutil"
+import { useRTL } from "../hooks"
 
 const MainPage = () => {
+  const { setRTL } = useRTL()
   return (
     <>
       <SEOutil title="Dashboard" />
+      <Button variant="outline" onClick={() => setRTL((s) => !s)}>
+        Change Direction
+      </Button>
       <Text className="text-brand-mainTextColor text-xl text-justify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut facere modi
         eaque natus tenetur laboriosam eius rerum? Neque illo laudantium nihil

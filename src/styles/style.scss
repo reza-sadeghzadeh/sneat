@@ -1,5 +1,5 @@
 .nav-item {
-  @apply flex justify-start items-center w-full font-normal py-3 px-4 rounded-md transition-all;
+  @apply flex justify-start items-center w-full font-normal py-3 my-0.5  px-4 rounded-md transition-all;
 
   &:hover {
     @apply bg-brand-mainTextColor/10;
@@ -7,21 +7,40 @@
 
   &.active {
     @apply bg-brand-primaryTextColor/10 font-semibold text-brand-primaryTextColor;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 2px;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      right: 0;
-      width: 4px;
-      height: 90%;
-      background: theme("colors.brand.primaryTextColor");
-    }
   }
 }
 
 .nav-item-link-holder {
-  @apply pr-4 text-brand-mainTextColor font-medium relative;
+  @apply pr-4 rtl:pr-0 rtl:pl-4 text-brand-mainTextColor font-medium relative;
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 4px;
+  height: 90%;
+  background: theme("colors.brand.primaryTextColor");
+}
+
+html[dir="ltr"] {
+  .nav-item.active::after {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+  }
+}
+
+html[dir="rtl"] {
+  .nav-item.active::after {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    content: "";
+    position: absolute;
+    top: 2px;
+    width: 4px;
+    height: 90%;
+    background: theme("colors.brand.primaryTextColor");
+    left: -1px;
+  }
 }

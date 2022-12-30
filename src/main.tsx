@@ -1,20 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./styles/main.scss";
-import "./styles/tailwind.scss";
-import "./styles/style.scss";
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
+import "./styles/main.scss"
+import "./styles/style.scss"
+import "./styles/tailwind.scss"
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"
+import RTLProvider from "./utils/RTLProvider"
+import { RTLContextProvider } from "./contexts/RTLContext"
 
-import { MantineProvider } from "@mantine/core";
-import defaultTheme from "./utils/customTheme";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <MantineProvider theme={defaultTheme}>
-        <App />
-      </MantineProvider>
+      <RTLContextProvider>
+        <RTLProvider>
+          <App />
+        </RTLProvider>
+      </RTLContextProvider>
     </BrowserRouter>
   </React.StrictMode>
-);
+)

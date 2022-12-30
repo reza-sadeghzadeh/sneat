@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   Burger,
   Indicator,
   MediaQuery,
@@ -34,13 +35,14 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           <Burger
             size={20}
             opacity={0.4}
-            className="mr-4"
+            mr={16}
+            // sx={{ marginRight: 16 }}
             opened={menuToggle.opened}
             onClick={() => menuToggle.setOpened((o) => !o)}
           />
         </MediaQuery>
         <BiSearch size={"22"} className="text-brand-mainTextColor" />
-        <div className="search-box relative grow mr-6">
+        <div className="search-box relative grow rtl:mr-0 mr-6 rtl:ml-6">
           <input
             name="searchbar"
             id="searchbar"
@@ -51,7 +53,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           />
           {!value && (
             <label
-              className="absolute text-md peer-focus:translate-x-1 transition-all left-4 top-3 pointer-events-none text-brand-mainTextColor/50"
+              className="absolute text-md peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3 pointer-events-none text-brand-mainTextColor/50"
               htmlFor="searchbar"
             >
               Search...
@@ -78,13 +80,13 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
               inline
               size={12}
               offset={3}
-              position="bottom-end"
+              position="bottom-start"
               color="green"
               withBorder
               className="cursor-pointer"
             >
               <Avatar
-                className="rounded-full"
+                sx={{ borderRadius: "100%" }}
                 src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
               />
             </Indicator>
@@ -92,26 +94,26 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
 
           <Menu.Dropdown>
             <Menu.Item>
-              <div className="flex justify-start items-center ">
+              <div className="flex justify-start items-center">
                 <Indicator
                   dot
                   inline
                   size={12}
-                  offset={6}
+                  offset={3}
                   position="bottom-end"
                   color="green"
                   withBorder
                   className="cursor-pointer"
                 >
                   <Avatar
-                    className="rounded-full"
+                    sx={{ borderRadius: "100%" }}
                     src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
                   />
                 </Indicator>
-                <div className="h-full ml-5">
+                <Box sx={{ marginLeft: 20 }} className="h-full">
                   <h3 className="text-md font-semibold">John Doe</h3>
                   <h4 className="text-xs opacity-70 ">Admin</h4>
-                </div>
+                </Box>
               </div>
             </Menu.Item>
             <Menu.Divider />
@@ -135,7 +137,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
                   className="rounded-full bg-red-400 text-white h-6 w-6 flex justify-center items-center"
                   color="red"
                 >
-                  4
+                  <Text>4</Text>
                 </div>
               }
             >

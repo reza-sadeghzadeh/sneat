@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import MainLayout from "./layouts/MainLayout"
 import CardsPage from "./pages/CardsPage"
 import MainPage from "./pages/MainPage"

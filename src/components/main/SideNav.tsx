@@ -56,13 +56,14 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       <MediaQuery largerThan={"lg"} styles={{ display: "none" }}>
         <Box
           sx={{ padding: 7 }}
-          className="absolute top-6 h-10 w-10 bg-white -right-5 rounded-full"
+          right={-20}
+          className="absolute top-6 h-10 w-10 bg-white rounded-full"
         >
           <button
             className="bg-brand-primaryTextColor rounded-full w-full h-full flex justify-center items-center"
             onClick={() => menuToggle.setOpened(false)}
           >
-            <BiChevronLeft size={28} className="text-white" />
+            <BiChevronLeft size={28} className="text-white rtl:rotate-180" />
           </button>
         </Box>
       </MediaQuery>
