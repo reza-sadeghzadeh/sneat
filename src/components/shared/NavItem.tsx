@@ -3,22 +3,18 @@ import React, { ReactNode } from "react"
 import { NavLink } from "react-router-dom"
 
 interface NavItemProps {
-  name: string
+  label: string
   to: string
   icon: ReactNode
 }
 
-const NavItem: React.FC<NavItemProps> = ({ icon, name, to }) => {
+const NavItem: React.FC<NavItemProps> = ({ icon, label, to }) => {
   return (
-    <Box>
-      <NavLink to={to} className="nav-item">
-        <>
-          <Box sx={{ transform: "scale(1.2)" }}>{icon}</Box>
-          <Text sx={{ marginLeft: 12 }} size={"sm"}>
-            {name}
-          </Text>
-        </>
-      </NavLink>
+    <Box component={NavLink} to={to} className="nav-item">
+      <Box sx={{ transform: "scale(1.2)" }}>{icon}</Box>
+      <Text sx={{ marginLeft: 14, fontSize: 15 }} size={"sm"}>
+        {label}
+      </Text>
     </Box>
   )
 }

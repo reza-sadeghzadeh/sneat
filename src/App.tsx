@@ -3,6 +3,8 @@ import { lazy } from "react"
 import { Route, Routes } from "react-router-dom"
 import { useDarkMode } from "./hooks"
 import MainLayout from "./layouts/MainLayout"
+import APage from "./pages/APage"
+import BPage from "./pages/BPage"
 import MainPage from "./pages/MainPage"
 const CardsPage = lazy(() => import("./pages/CardsPage"))
 
@@ -13,6 +15,10 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<MainPage />} />
           <Route path="cards" element={<CardsPage />} />
+        </Route>
+        <Route path="layouts" element={<MainLayout />}>
+          <Route path="b" element={<BPage />} />
+          <Route path="a" element={<APage />} />
         </Route>
       </Routes>
     </Box>

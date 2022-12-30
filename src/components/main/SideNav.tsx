@@ -9,10 +9,17 @@ import {
 import { useMediaQuery } from "@mantine/hooks"
 import React from "react"
 import { useTranslation } from "react-i18next"
-import { BiChevronLeft, BiCollection, BiHomeCircle } from "react-icons/bi"
+import {
+  BiChevronLeft,
+  BiCollection,
+  BiHomeCircle,
+  BiLayout,
+} from "react-icons/bi"
+import { useLocation, parsePath } from "react-router-dom"
 import { useDarkMode } from "../../hooks"
 import { BgStyles, TxtStyles, shadowStyles } from "../../utils"
 import NavItem from "../shared/NavItem"
+import NavItemExpansible from "../shared/NavItemExpansible"
 
 interface SearchHeaderProps {
   menuToggle: {
@@ -26,6 +33,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   const theme = useMantineTheme()
   const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
   const { colorScheme } = useDarkMode()
+
   return (
     <Navbar
       sx={{
@@ -83,14 +91,31 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         <li className="nav-item-link-holder">
           <NavItem
             icon={<BiHomeCircle />}
-            name={t("side_nav.dashboard")}
+            label={t("side_nav.dashboard")}
             to="/"
+          />
+        </li>
+        <li className="nav-item-link-holder">
+          <NavItemExpansible
+            icon={<BiLayout />}
+            label={t("side_nav.layouts")}
+            basePath="/layouts"
+            childRoutes={[
+              {
+                label: "karaj",
+                to: "/a",
+              },
+              {
+                label: "tehran",
+                to: "/b",
+              },
+            ]}
           />
         </li>
         <li className="nav-item-link-holder">
           <NavItem
             icon={<BiCollection />}
-            name={t("side_nav.cards")}
+            label={t("side_nav.cards")}
             to="/cards"
           />
         </li>

@@ -1,7 +1,8 @@
 {
   "side_nav": {
     "dashboard": "Dashboard",
-    "cards": "Cards"
+    "cards": "Cards",
+    "layouts": "Layouts"
   },
   "search_header": {
     "search": "Search...",

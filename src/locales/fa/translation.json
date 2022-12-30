@@ -1,7 +1,8 @@
 {
   "side_nav": {
     "dashboard": "داشبورد",
-    "cards": "کارت ها"
+    "cards": "کارت ها",
+    "layouts": "قالب ها"
   },
   "search_header": {
     "search": "جستجو...",
