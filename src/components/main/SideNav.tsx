@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Box,
   Image,
   MediaQuery,
@@ -9,14 +8,10 @@ import {
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import React from "react"
-import {
-  BiChevronLeft,
-  BiCollection,
-  BiHomeCircle,
-  BiLeftArrow,
-} from "react-icons/bi"
-import { Link } from "react-router-dom"
+import { BiChevronLeft, BiCollection, BiHomeCircle } from "react-icons/bi"
 import NavItem from "../shared/NavItem"
+import { useTranslation } from "react-i18next"
+
 interface SearchHeaderProps {
   menuToggle: {
     opened: boolean
@@ -25,6 +20,7 @@ interface SearchHeaderProps {
 }
 
 const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
+  const { t } = useTranslation()
   const theme = useMantineTheme()
   const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
   return (
@@ -72,10 +68,18 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       <Box>
         <ul>
           <li className="nav-item-link-holder">
-            <NavItem icon={<BiHomeCircle />} name="Dashboard" to="/" />
+            <NavItem
+              icon={<BiHomeCircle />}
+              name={t("side_nav.dashboard")}
+              to="/"
+            />
           </li>
           <li className="nav-item-link-holder">
-            <NavItem icon={<BiCollection />} name="Cards" to="/cards" />
+            <NavItem
+              icon={<BiCollection />}
+              name={t("side_nav.cards")}
+              to="/cards"
+            />
           </li>
         </ul>
       </Box>
