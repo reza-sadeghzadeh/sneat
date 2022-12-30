@@ -9,8 +9,14 @@ import {
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import React from "react"
-import { BiHomeCircle, BiLeftArrow } from "react-icons/bi"
-import NavItem from "../NavItem"
+import {
+  BiChevronLeft,
+  BiCollection,
+  BiHomeCircle,
+  BiLeftArrow,
+} from "react-icons/bi"
+import { Link } from "react-router-dom"
+import NavItem from "../shared/NavItem"
 interface SearchHeaderProps {
   menuToggle: {
     opened: boolean
@@ -23,7 +29,10 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
   return (
     <Navbar
-      sx={{ left: matches ? "0" : menuToggle.opened ? "0" : "-100%" }}
+      sx={{
+        left: matches ? "0" : menuToggle.opened ? "0" : "-100%",
+        zIndex: 102,
+      }}
       width={{ base: 260 }}
       hiddenBreakpoint="lg"
       className="shadow border-none transition-all"
@@ -44,16 +53,18 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         </Text>
       </Box>
       {/* drawer close button in small screens */}
-      <MediaQuery largerThan={"sm"} styles={{ display: "hiden" }}>
-        <div className="absolute top-8 flex justify-center items-center  -right-4  rounded-full">
-          <ActionIcon
-            variant="filled"
-            color={"violet"}
+      <MediaQuery largerThan={"lg"} styles={{ display: "none" }}>
+        <Box
+          sx={{ padding: 7 }}
+          className="absolute top-6 h-10 w-10 bg-white -right-5 rounded-full"
+        >
+          <button
+            className="bg-brand-primaryTextColor rounded-full w-full h-full flex justify-center items-center"
             onClick={() => menuToggle.setOpened(false)}
           >
-            <BiLeftArrow color="white" />
-          </ActionIcon>
-        </div>
+            <BiChevronLeft size={28} className="text-white" />
+          </button>
+        </Box>
       </MediaQuery>
 
       {/* menu items */}
@@ -63,7 +74,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             <NavItem icon={<BiHomeCircle />} name="Dashboard" to="/" />
           </li>
           <li className="nav-item-link-holder">
-            <NavItem icon={<BiHomeCircle />} name="Cards" to="/cards" />
+            <NavItem icon={<BiCollection />} name="Cards" to="/cards" />
           </li>
         </ul>
       </Box>

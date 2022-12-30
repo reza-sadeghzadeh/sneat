@@ -1,12 +1,13 @@
-import { ThemeContext } from "@emotion/react";
-import { CSSObject, MantineTheme, MantineThemeOverride } from "@mantine/core";
+import { ThemeContext } from "@emotion/react"
+import { CSSObject, MantineTheme, MantineThemeOverride } from "@mantine/core"
 
 const defaultTheme: MantineThemeOverride = {
   fontFamily: "Inter",
   fontSizes: {
     md: 15,
   },
-};
+  breakpoints: { lg: 1200 },
+}
 
 // const theme:MantineTheme={
 //     dir: "ltr",
@@ -55,4 +56,4 @@ const defaultTheme: MantineThemeOverride = {
 //     focusRingStyles: undefined
 // }
 
-export default defaultTheme;
+export default defaultTheme
