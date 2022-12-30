@@ -65,7 +65,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             className="bg-brand-primaryTextColor rounded-full w-full h-full flex justify-center items-center"
             onClick={() => menuToggle.setOpened(false)}
           >
-            <BiChevronLeft size={28} className="rtl:rotate-180" />
+            <BiChevronLeft size={28} className="rtl:rotate-180 text-white" />
           </button>
         </Box>
       </MediaQuery>
