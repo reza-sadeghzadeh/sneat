@@ -11,7 +11,7 @@
 }
 
 .nav-item-link-holder {
-  @apply pr-4 rtl:pr-0 rtl:pl-4 text-brand-mainTextColor font-medium relative;
+  @apply pr-4 rtl:pr-0 rtl:pl-4  font-medium relative;
 }
 
 .nav-item.active::after {

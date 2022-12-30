@@ -1,11 +1,30 @@
-import { ThemeContext } from "@emotion/react"
-import { CSSObject, MantineTheme, MantineThemeOverride } from "@mantine/core"
+import { MantineThemeOverride } from "@mantine/core"
 
 const defaultTheme: MantineThemeOverride = {
   fontFamily: "Inter",
   fontSizes: {
     md: 15,
   },
+  colors: {
+    brand: [
+      /* 0     mainTextColor*/ "#697a8d",
+      /* 1         bodyColor*/ "#f5f5f9",
+      /* 2  primaryTextColor*/ "#696cff",
+    ],
+    dark: [
+      "#8c8fa3",
+      "#7e8193",
+      "#707282",
+      "#626472",
+      "#545662",
+      "#464852",
+      "#383941",
+      "#2a2b31",
+      "#1c1d21",
+      "#0e0e10",
+    ],
+  },
+  primaryColor: "brand",
   breakpoints: { lg: 1200 },
 }
 

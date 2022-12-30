@@ -10,6 +10,7 @@ import RTLProvider from "./utils/RTLProvider"
 import { RTLContextProvider } from "./contexts/RTLContext"
 import initI18n from "./boot/i18n"
 import { I18nProvider } from "./utils/RTLi18n"
+import { ColorSchemeContextProvider } from "./contexts/ColorSchemeContext"
 
 // initializing the internationalization
 initI18n()
@@ -17,15 +18,17 @@ initI18n()
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <RTLContextProvider>
-        <RTLProvider>
-          <I18nProvider>
-            <Suspense fallback="Loading...">
-              <App />
-            </Suspense>
-          </I18nProvider>
-        </RTLProvider>
-      </RTLContextProvider>
+      <ColorSchemeContextProvider>
+        <RTLContextProvider>
+          <RTLProvider>
+            <I18nProvider>
+              <Suspense fallback="Loading...">
+                <App />
+              </Suspense>
+            </I18nProvider>
+          </RTLProvider>
+        </RTLContextProvider>
+      </ColorSchemeContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 )

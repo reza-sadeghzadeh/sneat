@@ -8,9 +8,11 @@ import {
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import React from "react"
-import { BiChevronLeft, BiCollection, BiHomeCircle } from "react-icons/bi"
-import NavItem from "../shared/NavItem"
 import { useTranslation } from "react-i18next"
+import { BiChevronLeft, BiCollection, BiHomeCircle } from "react-icons/bi"
+import { useDarkMode } from "../../hooks"
+import { BgStyles, TxtStyles, shadowStyles } from "../../utils"
+import NavItem from "../shared/NavItem"
 
 interface SearchHeaderProps {
   menuToggle: {
@@ -23,9 +25,13 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   const { t } = useTranslation()
   const theme = useMantineTheme()
   const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
+  const { colorScheme } = useDarkMode()
   return (
     <Navbar
       sx={{
+        ...BgStyles(),
+        ...TxtStyles(),
+        ...shadowStyles(),
         left: matches ? "0" : menuToggle.opened ? "0" : "-100%",
         zIndex: 102,
       }}
@@ -44,44 +50,50 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           src={"/logo.svg"}
           className="mx-2"
         />
-        <Text fw={"bold"} size={28} className="text-brand-mainTextColor">
+        <Text fw={"bold"} sx={{}} size={28}>
           sneat
         </Text>
       </Box>
       {/* drawer close button in small screens */}
       <MediaQuery largerThan={"lg"} styles={{ display: "none" }}>
         <Box
-          sx={{ padding: 7 }}
+          sx={{ padding: 7, ...BgStyles() }}
           right={-20}
-          className="absolute top-6 h-10 w-10 bg-white rounded-full"
+          className="absolute top-6 h-10 w-10 rounded-full"
         >
           <button
             className="bg-brand-primaryTextColor rounded-full w-full h-full flex justify-center items-center"
             onClick={() => menuToggle.setOpened(false)}
           >
-            <BiChevronLeft size={28} className="text-white rtl:rotate-180" />
+            <BiChevronLeft size={28} className="rtl:rotate-180" />
           </button>
         </Box>
       </MediaQuery>
 
       {/* menu items */}
-      <Box>
-        <ul>
-          <li className="nav-item-link-holder">
-            <NavItem
-              icon={<BiHomeCircle />}
-              name={t("side_nav.dashboard")}
-              to="/"
-            />
-          </li>
-          <li className="nav-item-link-holder">
-            <NavItem
-              icon={<BiCollection />}
-              name={t("side_nav.cards")}
-              to="/cards"
-            />
-          </li>
-        </ul>
+      <Box
+        component="ul"
+        sx={{
+          color:
+            colorScheme === "light"
+              ? theme.colors.brand[0]
+              : theme.colors.gray[4],
+        }}
+      >
+        <li className="nav-item-link-holder">
+          <NavItem
+            icon={<BiHomeCircle />}
+            name={t("side_nav.dashboard")}
+            to="/"
+          />
+        </li>
+        <li className="nav-item-link-holder">
+          <NavItem
+            icon={<BiCollection />}
+            name={t("side_nav.cards")}
+            to="/cards"
+          />
+        </li>
       </Box>
     </Navbar>
   )

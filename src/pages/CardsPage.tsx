@@ -2,7 +2,7 @@ import { Button } from "@mantine/core"
 import React from "react"
 import { useTranslation } from "react-i18next"
 
-import useI18n from "../hooks/useI18n"
+import { useI18n } from "../hooks"
 
 const CardsPage = () => {
   const { t, i18n } = useTranslation()

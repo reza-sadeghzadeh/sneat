@@ -8,10 +8,8 @@ const MainPage = () => {
   return (
     <>
       <SEOutil title="Dashboard" />
-      <Button variant="outline" onClick={() => setRTL((s) => !s)}>
-        Change Direction
-      </Button>
-      <Text className="text-brand-mainTextColor text-xl text-justify">
+
+      <Text className="mainTextColor text-xl text-justify p-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut facere modi
         eaque natus tenetur laboriosam eius rerum? Neque illo laudantium nihil
         eum tenetur minus reprehenderit et, molestiae natus. Perspiciatis,
