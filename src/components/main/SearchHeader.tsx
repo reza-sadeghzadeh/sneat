@@ -6,7 +6,6 @@ import {
   Indicator,
   MediaQuery,
   Menu,
-  Paper,
   Switch,
   Text,
   useMantineTheme,
@@ -27,8 +26,8 @@ import {
 import { Link } from "react-router-dom"
 
 import { useDarkMode, useI18n } from "../../hooks"
+import { BgStyles, shadowStyles, toPersianNumb, TxtStyles } from "../../utils"
 import { languageProfiles, Lngs } from "../../utils/language"
-import { shadowStyles, TxtStyles, BgStyles } from "../../utils"
 
 interface SearchHeaderProps {
   menuToggle: {
@@ -72,7 +71,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         />
         {!value && (
           <label
-            className="absolute text-sm peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3.5 pointer-events-none mainTextColor/50"
+            className="absolute opacity-70 text-sm peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3.5 pointer-events-none mainTextColor/50"
             htmlFor="searchbar"
           >
             {t("search_header.search")}
@@ -151,7 +150,6 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         position="bottom-end"
         shadow="md"
         width={200}
-        classNames={{ itemLabel: "mainTextColor" }}
       >
         <Menu.Target>
           <Indicator
@@ -166,7 +164,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           >
             <Avatar
               sx={{ borderRadius: "100%" }}
-              src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
+              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
             />
           </Indicator>
         </Menu.Target>
@@ -186,7 +184,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
               >
                 <Avatar
                   sx={{ borderRadius: "100%" }}
-                  src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
+                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                 />
               </Indicator>
               <Box sx={{ marginLeft: 20 }} className="h-full">
@@ -197,20 +195,22 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           </Menu.Item>
           <Menu.Divider />
 
-          <Menu.Item icon={<BiUser size={20} className="mainTextColor" />}>
+          <Menu.Item icon={<BiUser size={20} />}>
             {t("search_header.profile.my_profile")}
           </Menu.Item>
-          <Menu.Item icon={<BiCog size={20} className="mainTextColor" />}>
+          <Menu.Item icon={<BiCog size={20} />}>
             {t("search_header.profile.settings")}
           </Menu.Item>
           <Menu.Item
-            icon={<BiCreditCard size={20} className="mainTextColor" />}
+            icon={<BiCreditCard size={20} />}
             rightSection={
               <div
                 className="rounded-full bg-red-400 text-white h-6 w-6 flex justify-center items-center"
                 color="red"
               >
-                <Text>4</Text>
+                <Text className="leading-none">
+                  {lng === "fa" ? toPersianNumb(4) : 4}
+                </Text>
               </div>
             }
           >
