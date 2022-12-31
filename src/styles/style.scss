@@ -10,7 +10,7 @@
   }
 }
 .nav-item-expaned-panel {
-  @apply flex justify-start items-center w-full font-normal relative py-2.5 my-0.5 rounded-md transition-all;
+  @apply flex justify-start items-center w-full font-normal relative py-2.5 mb-0.5 rounded-md transition-all;
 
   .dot {
     @apply bg-brand-mainTextColor/50;
