@@ -112,7 +112,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             <Menu.Item
               key={p.native}
               disabled={lng === p.locale}
-              className="disabled:cursor-not-allowed"
+              className={`disabled:cursor-not-allowed always-${p.locale}`}
               style={{
                 padding: "0.7rem 1rem",
               }}

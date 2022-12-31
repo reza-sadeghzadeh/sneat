@@ -103,11 +103,11 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             childRoutes={[
               {
                 label: t("side_nav.layouts.with_out_menu"),
-                to: "/with_out_menu",
+                to: "/with-out-menu",
               },
               {
                 label: t("side_nav.layouts.with_out_navbar"),
-                to: "/with_out_navbar",
+                to: "/with-out-navbar",
               },
               {
                 label: t("side_nav.layouts.container"),

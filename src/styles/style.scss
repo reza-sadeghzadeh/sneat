@@ -10,10 +10,23 @@
   }
 }
 .nav-item-expaned-panel {
-  @apply flex justify-start items-center w-full font-normal py-2.5 my-0.5 rounded-md transition-all;
+  @apply flex justify-start items-center w-full font-normal relative py-2.5 my-0.5 rounded-md transition-all;
 
   .dot {
-    @apply bg-brand-mainTextColor/20;
+    @apply bg-brand-mainTextColor/50;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+
+      border-radius: 100%;
+      top: -2px;
+      opacity: 0;
+      background-color: theme("colors.brand.primaryTextColor");
+      left: -2px;
+    }
   }
 
   &:hover {
@@ -22,7 +35,12 @@
 
   &.active {
     .dot {
-      @apply bg-brand-primaryTextColor scale-150 shadow-brand-primaryTextColor shadow-2xl;
+      @apply bg-brand-primaryTextColor scale-125 shadow-brand-primaryTextColor shadow-2xl;
+
+      &::after {
+        opacity: 0.2;
+        content: "";
+      }
     }
     @apply font-semibold;
   }

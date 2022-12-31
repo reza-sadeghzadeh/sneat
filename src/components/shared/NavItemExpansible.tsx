@@ -68,8 +68,8 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
             </Text>
           </Box>
         </Accordion.Control>
-        {childRoutes.map((c) => (
-          <Accordion.Panel sx={TxtStyles()}>
+        {childRoutes.map((c, index) => (
+          <Accordion.Panel key={index} sx={TxtStyles()}>
             <Box
               component={NavLink}
               to={basePath + c.to}
@@ -78,7 +78,7 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
               className="flex justify-start items-center nav-item-expaned-panel"
             >
               <Box className="w-1.5 h-1.5 dot rounded-full" />
-              <Text sx={{ marginLeft: 22, fontSize: 14 }} size={"sm"}>
+              <Text sx={{ marginLeft: 20, fontSize: 14.5 }} size={"sm"}>
                 {c.label}
               </Text>
             </Box>

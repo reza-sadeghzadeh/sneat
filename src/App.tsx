@@ -20,8 +20,8 @@ function App() {
           <Route path="cards" element={<CardsPage />} />
         </Route>
         <Route path="layouts" element={<MainLayout />}>
-          <Route path="with_out_navbar" element={<WithOutNavbar />} />
-          <Route path="with_out_menu" element={<WithOutMenu />} />
+          <Route path="with-out-navbar" element={<WithOutNavbar />} />
+          <Route path="with-out-menu" element={<WithOutMenu />} />
           <Route path="container" element={<ContainerPage />} />
           <Route path="fluid" element={<Fluid />} />
           <Route path="blank" element={<Blank />} />
