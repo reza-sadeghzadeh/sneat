@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Outlet, useLocation } from "react-router-dom"
 
 import SearchHeader from "../components/main/SearchHeader"
-import SideNav from "../components/main/SideNav"
+import SideNav from "../components/main/sideNav/SideNav"
 import { useDarkMode } from "../hooks"
 
 const MainLayout = () => {

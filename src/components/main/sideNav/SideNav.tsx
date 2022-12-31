@@ -1,6 +1,7 @@
-import { Navbar, useMantineTheme } from "@mantine/core"
+import { Accordion, Navbar, useMantineTheme } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
-import React from "react"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { BgStyles, shadowStyles, TxtStyles } from "../../../utils"
 import Devider from "./components/Devider"
 import DrawerCloser from "./components/DrawerCloser"
@@ -18,6 +19,9 @@ interface SearchHeaderProps {
 const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
   const theme = useMantineTheme()
   const matches = useMediaQuery(`(min-width:${theme.breakpoints.lg}px)`)
+  const { t } = useTranslation()
+
+  const [openAccord, setOpenAccord] = useState<string | null>(null)
 
   return (
     <Navbar
@@ -35,9 +39,10 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
     >
       <LogoSec />
       <DrawerCloser setOpened={menuToggle.setOpened} />
-      <TopMenuItems />
-      <Devider title="side_nav.pages._" />
-      <PagesMenuItems />
+      <TopMenuItems accordion={{ openAccord, setOpenAccord }} />
+      <Devider title={t("side_nav.pages._")} />
+      <PagesMenuItems accordion={{ openAccord, setOpenAccord }} />
+      <Devider title={t("side_nav.components._")} />
     </Navbar>
   )
 }

@@ -4,7 +4,14 @@ import { BiCubeAlt, BiDockTop, BiLockOpenAlt } from "react-icons/bi"
 import { useDarkMode } from "../../../../hooks"
 import NavItemExpansible from "../../../shared/NavItemExpansible"
 
-const PagesMenuItems = () => {
+interface IPagesMenuItems {
+  accordion: {
+    openAccord: string | null
+    setOpenAccord: React.Dispatch<React.SetStateAction<string | null>>
+  }
+}
+
+const PagesMenuItems: React.FC<IPagesMenuItems> = ({ accordion }) => {
   const theme = useMantineTheme()
   const { colorScheme } = useDarkMode()
   const { t } = useTranslation()
@@ -22,6 +29,7 @@ const PagesMenuItems = () => {
       {/* account_settings */}
       <li className="nav-item-link-holder">
         <NavItemExpansible
+          accordion={accordion}
           icon={<BiDockTop />}
           label={t("side_nav.pages.account_settings._")}
           basePath="/pages/account-settings"
@@ -44,6 +52,7 @@ const PagesMenuItems = () => {
       {/* authentications */}
       <li className="nav-item-link-holder">
         <NavItemExpansible
+          accordion={accordion}
           icon={<BiLockOpenAlt />}
           label={t("side_nav.pages.authentications._")}
           basePath="/pages/auth"
@@ -67,6 +76,7 @@ const PagesMenuItems = () => {
       {/* misc */}
       <li className="nav-item-link-holder">
         <NavItemExpansible
+          accordion={accordion}
           icon={<BiCubeAlt />}
           label={t("side_nav.pages.misc._")}
           basePath="/pages/misc"

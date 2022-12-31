@@ -10,10 +10,15 @@ interface NavItemProps {
   label: string
   icon: ReactNode
   basePath: string
+  accordion: {
+    openAccord: string | null
+    setOpenAccord: React.Dispatch<React.SetStateAction<string | null>>
+  }
   childRoutes: { to: string; label: string }[]
 }
 
 const NavItemExpansible: React.FC<NavItemProps> = ({
+  accordion,
   icon,
   label,
   basePath,
@@ -24,6 +29,8 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
 
   return (
     <Accordion
+      value={accordion.openAccord}
+      onChange={(e) => accordion.setOpenAccord(e)}
       transitionDuration={300}
       chevron={<BiChevronRight className="rtl:rotate-180" />}
       chevronPosition="right"

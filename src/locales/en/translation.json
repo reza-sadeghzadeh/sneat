@@ -29,6 +29,9 @@
         "error": "Error",
         "under_maintenance": "Under Maintenance"
       }
+    },
+    "components": {
+      "_": "COMPONENTS"
     }
   },
   "search_header": {

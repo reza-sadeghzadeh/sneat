@@ -5,7 +5,14 @@ import { useDarkMode } from "../../../../hooks"
 import NavItem from "../../../shared/NavItem"
 import NavItemExpansible from "../../../shared/NavItemExpansible"
 
-const TopMenuItems = () => {
+interface ITopMenuItems {
+  accordion: {
+    openAccord: string | null
+    setOpenAccord: React.Dispatch<React.SetStateAction<string | null>>
+  }
+}
+
+const TopMenuItems: React.FC<ITopMenuItems> = ({ accordion }) => {
   const theme = useMantineTheme()
   const { colorScheme } = useDarkMode()
   const { t } = useTranslation()
@@ -29,6 +36,7 @@ const TopMenuItems = () => {
       </li>
       <li className="nav-item-link-holder">
         <NavItemExpansible
+          accordion={accordion}
           icon={<BiLayout />}
           label={t("side_nav.layouts._")}
           basePath="/layouts"
