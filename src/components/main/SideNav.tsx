@@ -12,12 +12,14 @@ import { useTranslation } from "react-i18next"
 import {
   BiChevronLeft,
   BiCollection,
+  BiCubeAlt,
+  BiDockTop,
   BiHomeCircle,
   BiLayout,
+  BiLockOpenAlt,
 } from "react-icons/bi"
-import { useLocation, parsePath } from "react-router-dom"
 import { useDarkMode } from "../../hooks"
-import { BgStyles, TxtStyles, shadowStyles } from "../../utils"
+import { BgStyles, shadowStyles, TxtStyles } from "../../utils"
 import NavItem from "../shared/NavItem"
 import NavItemExpansible from "../shared/NavItemExpansible"
 
@@ -124,11 +126,80 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             ]}
           />
         </li>
+      </Box>
+      <p className="text-xs mt-7 px-5 mb-3.5 opacity-80 uppercase side-line">
+        {t("side_nav.pages._")}
+      </p>
+      <Box
+        component="ul"
+        sx={{
+          color:
+            colorScheme === "light"
+              ? theme.colors.brand[0]
+              : theme.colors.gray[4],
+        }}
+      >
+        {/* account_settings */}
         <li className="nav-item-link-holder">
-          <NavItem
-            icon={<BiCollection />}
-            label={t("side_nav.cards")}
-            to="/cards"
+          <NavItemExpansible
+            icon={<BiDockTop />}
+            label={t("side_nav.pages.account_settings._")}
+            basePath="/pages/account-settings"
+            childRoutes={[
+              {
+                label: t("side_nav.pages.account_settings.account"),
+                to: "/account",
+              },
+              {
+                label: t("side_nav.pages.account_settings.notifications"),
+                to: "/notifications",
+              },
+              {
+                label: t("side_nav.pages.account_settings.connections"),
+                to: "/connections",
+              },
+            ]}
+          />
+        </li>
+        {/* authentications */}
+        <li className="nav-item-link-holder">
+          <NavItemExpansible
+            icon={<BiLockOpenAlt />}
+            label={t("side_nav.pages.authentications._")}
+            basePath="/pages/auth"
+            childRoutes={[
+              {
+                label: t("side_nav.pages.authentications.login"),
+                to: "/login",
+              },
+              {
+                label: t("side_nav.pages.authentications.register"),
+                to: "/register",
+              },
+              {
+                label: t("side_nav.pages.authentications.forgot_password"),
+                to: "/forgot-password",
+              },
+            ]}
+          />
+        </li>
+
+        {/* misc */}
+        <li className="nav-item-link-holder">
+          <NavItemExpansible
+            icon={<BiCubeAlt />}
+            label={t("side_nav.pages.misc._")}
+            basePath="/pages/misc"
+            childRoutes={[
+              {
+                label: t("side_nav.pages.misc.error"),
+                to: "/error",
+              },
+              {
+                label: t("side_nav.pages.misc.under_maintenance"),
+                to: "/under-maintenance",
+              },
+            ]}
           />
         </li>
       </Box>

@@ -4,6 +4,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
 import { NavLink, useLocation } from "react-router-dom"
 import { useRTL } from "../../hooks"
 import { TxtStyles } from "../../utils"
+import NavItemIcon from "./NavItemIcon"
 
 interface NavItemProps {
   label: string
@@ -23,7 +24,7 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
 
   return (
     <Accordion
-      transitionDuration={400}
+      transitionDuration={300}
       chevron={<BiChevronRight className="rtl:rotate-180" />}
       chevronPosition="right"
       sx={{ maxWidth: 400 }}
@@ -56,14 +57,15 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
             )
           }
           sx={TxtStyles()}
-          className={`nav-item mb-1.5 ${
+          className={`nav-item ${
             location.pathname.startsWith(basePath) ? "active" : ""
           }`}
           py={10}
         >
           <Box className="flex justify-start items-center">
-            <Box sx={{ transform: "scale(1.2)" }}>{icon}</Box>
-            <Text sx={{ marginLeft: 14, fontSize: 15 }} size={"sm"}>
+            <NavItemIcon icon={icon} />
+
+            <Text sx={{ marginLeft: 14, fontSize: 14.5 }} size={"sm"}>
               {label}
             </Text>
           </Box>

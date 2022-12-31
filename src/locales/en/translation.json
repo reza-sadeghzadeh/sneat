@@ -9,6 +9,26 @@
       "container": "Container",
       "fluid": "Fluid",
       "blank": "Blank"
+    },
+    "pages": {
+      "_": "PAGES",
+      "account_settings": {
+        "_": "Account Settings",
+        "account": "Account",
+        "notifications": "Notifications",
+        "connections": "Connections"
+      },
+      "authentications": {
+        "_": "Authentications",
+        "login": "Login",
+        "register": "Register",
+        "forgot_password": "Forgot Password"
+      },
+      "misc": {
+        "_": "Misc",
+        "error": "Error",
+        "under_maintenance": "Under Maintenance"
+      }
     }
   },
   "search_header": {

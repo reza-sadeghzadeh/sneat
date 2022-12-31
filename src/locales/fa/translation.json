@@ -4,11 +4,31 @@
     "cards": "کارت ها",
     "layouts": {
       "_": "قالب ها",
-      "with_out_menu": "با منوی بالا",
-      "with_out_navbar": "با منوی کناری",
-      "container": "دربرگیرنده",
+      "with_out_menu": "بدون منوی بالا",
+      "with_out_navbar": "بدون منوی کناری",
+      "container": "احاطه شده",
       "fluid": "شناور",
       "blank": "خالی"
+    },
+    "pages": {
+      "_": "صفحات",
+      "account_settings": {
+        "_": "تنظیمات حساب",
+        "account": "حساب کاربری",
+        "notifications": "اطلاع رسانی ها",
+        "connections": "اتصالات"
+      },
+      "authentications": {
+        "_": "احراز هویت",
+        "login": "ورود",
+        "register": "ثبت نام",
+        "forgot_password": "فراموشی رمز عبور"
+      },
+      "misc": {
+        "_": "متفرقه",
+        "error": "خطا",
+        "under_maintenance": "در حال تعمیر"
+      }
     }
   },
   "search_header": {
