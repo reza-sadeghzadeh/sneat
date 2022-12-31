@@ -47,7 +47,7 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
         },
       }}
     >
-      <Accordion.Item value="item-1">
+      <Accordion.Item value={label}>
         <Accordion.Control
           chevron={
             RTL ? (
