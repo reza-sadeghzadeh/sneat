@@ -56,7 +56,7 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
             )
           }
           sx={TxtStyles()}
-          className={`nav-item ${
+          className={`nav-item mb-1 ${
             location.pathname.startsWith(basePath) ? "active" : ""
           }`}
           py={10}
@@ -78,7 +78,7 @@ const NavItemExpansible: React.FC<NavItemProps> = ({
               className="flex justify-start items-center nav-item-expaned-panel"
             >
               <Box className="w-1.5 h-1.5 dot rounded-full" />
-              <Text sx={{ marginLeft: 20, fontSize: 14.5 }} size={"sm"}>
+              <Text sx={{ marginLeft: 20, fontSize: 14 }} size={"sm"}>
                 {c.label}
               </Text>
             </Box>

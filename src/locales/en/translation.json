@@ -4,8 +4,8 @@
     "cards": "Cards",
     "layouts": {
       "_": "Layouts",
-      "with_out_menu": "Without Menu",
-      "with_out_navbar": "Without Nav Bar",
+      "with_out_menu": "Without menu",
+      "with_out_navbar": "Without navbar",
       "container": "Container",
       "fluid": "Fluid",
       "blank": "Blank"

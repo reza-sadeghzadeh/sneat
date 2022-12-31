@@ -49,7 +49,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       pl={"md"}
     >
       {/* logo */}
-      <Box className="flex items-center justify-start mt-2 px-1 py-3">
+      <Box className="flex items-center justify-start mt-2 px-2 py-3.5">
         <Image
           height={36}
           width={22}
