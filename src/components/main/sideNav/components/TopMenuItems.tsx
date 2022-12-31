@@ -19,6 +19,7 @@ const TopMenuItems: React.FC<ITopMenuItems> = ({ accordion }) => {
 
   return (
     <Box
+      pl={"md"}
       component="ul"
       sx={{
         color:

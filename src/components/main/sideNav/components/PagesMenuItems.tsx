@@ -18,6 +18,7 @@ const PagesMenuItems: React.FC<IPagesMenuItems> = ({ accordion }) => {
 
   return (
     <Box
+      pl={"md"}
       component="ul"
       sx={{
         color:

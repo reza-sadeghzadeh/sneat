@@ -47,3 +47,8 @@ html[dir="rtl"] {
 //   font-family: vazir, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 //     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 // }
+
+.mantine-rtl-ScrollArea-scrollbar[data-orientation="horizontal"],
+.mantineScrollArea-scrollbar[data-orientation="horizontal"] {
+  display: none !important;
+}

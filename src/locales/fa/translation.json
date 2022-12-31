@@ -1,7 +1,6 @@
 {
   "side_nav": {
     "dashboard": "داشبورد",
-    "cards": "کارت ها",
     "layouts": {
       "_": "قالب ها",
       "with_out_menu": "بدون منوی بالا",
@@ -29,6 +28,56 @@
         "error": "خطا",
         "under_maintenance": "در حال تعمیر"
       }
+    },
+    "components": {
+      "cards": "کارت ها",
+      "_": "کامپوننت ها",
+      "box_icons": "آیکون ها",
+      "components": "کامپوننت ها",
+      "user_interface": {
+        "toasts": "Toasts",
+        "_": "رایط کاربری",
+        "progress": "درصد پیشرفت",
+        "dropdowns": "منوها",
+        "carousel": "Carousel",
+        "spiners": "Spinners",
+        "alerts": "اخطارها",
+        "footer": "فوتر",
+        "modals": "Modals",
+        "badges": "نشان ها",
+        "buttons": "دکمه ها",
+        "collapse": "Collapse",
+        "offcanvas": "Offcanvas",
+        "typography": "تایپوگرافی",
+        "list_groups": "گروه لیست",
+        "tabs_&_pills": "تب ها",
+        "tooltips_&_popovers": "تولتیپ ها",
+        "Pagination_&_breadcrumbs": "صفحه بندی ها"
+      },
+      "extended_ui": {
+        "_": "رابط گسترش داده شده",
+        "perfect_scrollbar": "اسکرول",
+        "text_devider": "جدا کننده"
+      }
+    },
+    "forms_&_tables": {
+      "_": "فرم ها و جداول",
+      "form_elements": {
+        "_": "المان های فرم",
+        "basic_inputs": "ورودی متن",
+        "input_groups": "ورودی متن گروهی"
+      },
+      "form_layouts": {
+        "_": "قالب فرم ها",
+        "vertical_form": "فرم عمودی",
+        "horizontal_form": "فرم افقی"
+      },
+      "tables": "جدول ها"
+    },
+    "misc": {
+      "_": "متفرقه",
+      "support": "پشتیبانی",
+      "documentaion": "مستندات"
     }
   },
   "search_header": {

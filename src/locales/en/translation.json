@@ -1,7 +1,6 @@
 {
   "side_nav": {
     "dashboard": "Dashboard",
-    "cards": "Cards",
     "layouts": {
       "_": "Layouts",
       "with_out_menu": "Without menu",
@@ -31,7 +30,54 @@
       }
     },
     "components": {
-      "_": "COMPONENTS"
+      "cards": "Cards",
+      "_": "COMPONENTS",
+      "box_icons": "BoxIcons",
+      "components": "Components",
+      "user_interface": {
+        "toasts": "Toasts",
+        "_": "User interface",
+        "progress": "Progress",
+        "dropdowns": "Dropdowns",
+        "carousel": "Carousel",
+        "spiners": "Spinners",
+        "alerts": "Alerts",
+        "footer": "Footer",
+        "modals": "Modals",
+        "badges": "Badges",
+        "buttons": "Buttons",
+        "collapse": "Collapse",
+        "offcanvas": "Offcanvas",
+        "typography": "Typography",
+        "list_groups": "List groups",
+        "tabs_&_pills": "Tabs & Pills",
+        "tooltips_&_popovers": "Tooltips & popovers",
+        "Pagination_&_breadcrumbs": "Pagination & Breadcrumbs"
+      },
+      "extended_ui": {
+        "_": "Extended UI",
+        "perfect_scrollbar": "Perfect scrollbar",
+        "text_devider": "Text Divider"
+      }
+    },
+    "forms_&_tables": {
+      "_": "Forms & Tables",
+      "form_elements": {
+        "_": "Form Elements",
+        "basic_inputs": "Basic Inputs",
+        "input_groups": "Input groups"
+      },
+      "form_layouts": {
+        "_": "Form Layouts",
+        "vertical_form": "Vertical Form",
+        "horizontal_form": "Horizontal Form"
+      },
+      "tables": "Tables"
+    },
+    "misc": {
+      "_": "Misc",
+      "support": "Support",
+      "documentaion": "Documentaion"
     }
   },
   "search_header": {

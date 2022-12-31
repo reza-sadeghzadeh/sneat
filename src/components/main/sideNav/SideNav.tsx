@@ -1,11 +1,16 @@
-import { Accordion, Navbar, useMantineTheme } from "@mantine/core"
+import { Accordion, Navbar, ScrollArea, useMantineTheme } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { BiCollection } from "react-icons/bi"
 import { BgStyles, shadowStyles, TxtStyles } from "../../../utils"
+import NavItem from "../../shared/NavItem"
+import ComponentsMenuItems from "./components/ComponentsMenuItems"
 import Devider from "./components/Devider"
 import DrawerCloser from "./components/DrawerCloser"
+import FormsMenuItems from "./components/FormsMenuItems"
 import LogoSec from "./components/LogoSec"
+import MiscMenuItems from "./components/MiscMenuItems"
 import PagesMenuItems from "./components/PagesMenuItems"
 import TopMenuItems from "./components/TopMenuItems"
 
@@ -34,15 +39,26 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       }}
       width={{ base: 260 }}
       hiddenBreakpoint="lg"
-      className="shadow border-none transition-all"
-      pl={"md"}
+      className="shadow border-none transition-all overflow-x-hidden"
     >
       <LogoSec />
-      <DrawerCloser setOpened={menuToggle.setOpened} />
-      <TopMenuItems accordion={{ openAccord, setOpenAccord }} />
-      <Devider title={t("side_nav.pages._")} />
-      <PagesMenuItems accordion={{ openAccord, setOpenAccord }} />
-      <Devider title={t("side_nav.components._")} />
+      <ScrollArea
+        style={{ height: "100%", width: "100%", paddingBottom: 12 }}
+        scrollbarSize={1}
+        className="overflow-x-hidden"
+        scrollHideDelay={500}
+      >
+        <DrawerCloser setOpened={menuToggle.setOpened} />
+        <TopMenuItems accordion={{ openAccord, setOpenAccord }} />
+        <Devider title={t("side_nav.pages._")} />
+        <PagesMenuItems accordion={{ openAccord, setOpenAccord }} />
+        <Devider title={t("side_nav.components._")} />
+        <ComponentsMenuItems accordion={{ openAccord, setOpenAccord }} />
+        <Devider title={t("side_nav.forms_&_tables._")} />
+        <FormsMenuItems accordion={{ openAccord, setOpenAccord }} />
+        <Devider title={t("side_nav.misc._")} />
+        <MiscMenuItems accordion={{ openAccord, setOpenAccord }} />
+      </ScrollArea>
     </Navbar>
   )
 }
