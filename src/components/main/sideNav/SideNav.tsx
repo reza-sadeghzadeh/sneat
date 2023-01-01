@@ -39,16 +39,16 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       }}
       width={{ base: 260 }}
       hiddenBreakpoint="lg"
-      className="shadow border-none transition-all overflow-x-hidden"
+      className="shadow border-none transition-all"
     >
       <LogoSec />
+      <DrawerCloser setOpened={menuToggle.setOpened} />
       <ScrollArea
         style={{ height: "100%", width: "100%", paddingBottom: 12 }}
         scrollbarSize={1}
         className="overflow-x-hidden"
         scrollHideDelay={500}
       >
-        <DrawerCloser setOpened={menuToggle.setOpened} />
         <TopMenuItems accordion={{ openAccord, setOpenAccord }} />
         <Devider title={t("side_nav.pages._")} />
         <PagesMenuItems accordion={{ openAccord, setOpenAccord }} />
