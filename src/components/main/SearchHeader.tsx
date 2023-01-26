@@ -59,7 +59,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           onClick={() => menuToggle.setOpened((o) => !o)}
         />
       </MediaQuery>
-      <BiSearch size={"22"} className="mainTextColor" />
+      <BiSearch size={"22"} className="text-brand-primary" />
       <div className="search-box relative grow rtl:mr-0 mr-6 rtl:ml-6">
         <input
           name="searchbar"
@@ -67,11 +67,11 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="bg-transparent py-2.5 w-full outline-none rounded-xl mx-2 px-2 mainTextColor/80 grow font-normal text-md peer"
+          className="bg-transparent py-2.5 w-full outline-none rounded-xl mx-2 px-2 text-brand-primary/80 grow font-normal text-md peer"
         />
         {!value && (
           <label
-            className="absolute opacity-70 text-sm peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3.5 pointer-events-none mainTextColor/50"
+            className="absolute opacity-70 text-sm peer-focus:translate-x-1 rtl:peer-focus:-translate-x-1 transition-all left-4 rtl:left-0 rtl:right-4 top-3.5 pointer-events-none text-brand-primary/50"
             htmlFor="searchbar"
           >
             {t("search_header.search")}
@@ -91,7 +91,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
         position="bottom-end"
         shadow="md"
         width={150}
-        classNames={{ itemLabel: "mainTextColor" }}
+        classNames={{ itemLabel: "text-brand-primary" }}
       >
         <Menu.Target>
           <Box
@@ -116,7 +116,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
               style={{
                 padding: "0.7rem 1rem",
               }}
-              icon={<BiText size={20} className="mainTextColor" />}
+              icon={<BiText size={20} className="text-brand-primary" />}
               onClick={() => {
                 switch (p.locale) {
                   case Lngs.FA:
@@ -237,7 +237,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
 
           <Link to={"/login"}>
             <Menu.Item
-              icon={<BiPowerOff size={20} className="mainTextColor" />}
+              icon={<BiPowerOff size={20} className="text-brand-primary" />}
             >
               {t("search_header.profile.log_out")}
             </Menu.Item>

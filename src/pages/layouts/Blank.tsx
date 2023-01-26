@@ -9,7 +9,7 @@ const Blank = () => {
     <>
       <SEOutil title="Dashboard" />
 
-      <Text className="mainTextColor text-xl text-justify p-4">
+      <Text className="text-brand-primary text-xl text-justify p-4">
         ContainerPage ContainerPage dolorContainerPage A tetur adipi A sicing
         elit A . ContainerPage ContainerPage dolorContainerPage A tetur adipi A
         sicing elit A . ContainerPage ContainerPage dolorContainerPage A tetur

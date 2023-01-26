@@ -7,7 +7,7 @@ const defaultTheme: MantineThemeOverride = {
   },
   colors: {
     brand: [
-      /* 0     mainTextColor*/ "#697a8d",
+      /* 0     primary*/ "#697a8d",
       /* 1         bodyColor*/ "#f5f5f9",
       /* 2  primaryTextColor*/ "#696cff",
     ],

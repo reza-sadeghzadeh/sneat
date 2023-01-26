@@ -89,5 +89,14 @@
       "dark_mode": "Dark Mode",
       "log_out": "Log Out"
     }
+  },
+  "pages": {
+    "main_page": {
+      "cong": {
+        "header": "Congratulations John! 🎉",
+        "message": " You have done 72% more sales today.Check your new badge in your profile.",
+        "button": "View Budget"
+      }
+    }
   }
 }

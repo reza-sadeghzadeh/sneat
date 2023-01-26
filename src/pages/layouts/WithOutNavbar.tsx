@@ -9,7 +9,7 @@ const WithOutNavbar = () => {
     <>
       <SEOutil title="Dashboard" />
 
-      <Text className="mainTextColor text-xl text-justify p-4">
+      <Text className="text-brand-primary text-xl text-justify p-4">
         B Lorem B ipsumB dolor sit B amet consectetur B adipisicing B elit. Aut
         B facere modi B Lorem B ipsumB dolor sit B amet consectetur B
         adipisicing B elit. Aut B facere modi B Lorem B ipsumB dolor sit B amet

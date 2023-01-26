@@ -48,7 +48,7 @@ const MainLayout = () => {
             />
           )}
           {/* outlet */}
-          <Paper component="main" className="mt-6">
+          <Paper bg={"transparent"} component="main" className="mt-6">
             <Outlet />
           </Paper>
         </div>

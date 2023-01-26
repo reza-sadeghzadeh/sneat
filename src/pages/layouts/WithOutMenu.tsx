@@ -9,7 +9,7 @@ const WithOutMenu = () => {
     <>
       <SEOutil title="Dashboard" />
 
-      <Text className="mainTextColor text-xl text-justify p-4">
+      <Text className="text-brand-primary text-xl text-justify p-4">
         A Lorem A ipsum dolor sit ame At consec A tetur adipi A sicing elit A .
         Aut facere modi A Lorem A ipsum dolor sit ame At consec A tetur adipi A
         sicing elit A . Aut facere modi A Lorem A ipsum dolor sit ame At consec

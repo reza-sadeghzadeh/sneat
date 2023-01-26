@@ -28,7 +28,7 @@ const shadowStyles = () => {
   return {
     boxShadow:
       colorScheme === "light"
-        ? "0 0 0.375rem 0.25rem rgba(161, 172, 184, 0.15)"
+        ? "0 0 0.375rem 0.25rem rgba(161, 172, 184, 0.1)"
         : "",
   }
 }

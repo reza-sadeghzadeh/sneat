@@ -5,9 +5,12 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          mainTextColor: "#697a8d",
           bodyColor: "#f5f5f9",
           primaryTextColor: "#696cff",
+          primary: "#696cff",
+          green: "#71DD37",
+          blue: "#03C3EC",
+          red: "#FF3E1D",
         },
       },
     },
