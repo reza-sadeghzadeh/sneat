@@ -59,7 +59,7 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
           onClick={() => menuToggle.setOpened((o) => !o)}
         />
       </MediaQuery>
-      <BiSearch size={"22"} className="text-brand-primary" />
+      <BiSearch size={"22"} className="text-brand-gray" />
       <div className="search-box relative grow rtl:mr-0 mr-6 rtl:ml-6">
         <input
           name="searchbar"
