@@ -1,5 +1,7 @@
 import { Box, Menu } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Chart from "react-apexcharts"
+import { useTranslation } from "react-i18next"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import {
   BiChevronDown,
@@ -18,37 +20,47 @@ import Cong from "../components/page/mainPage/Cong"
 import { BgStyles, shadowStyles, TxtStyles } from "../utils"
 
 const MainPage = () => {
+  const matchesXL = useMediaQuery("(min-width:1280px)")
+  const { t } = useTranslation()
   return (
     <>
       <SEOutil title="Dashboard" />
-      <div className="flex flex-wrap ">
+      <div className="flex flex-wrap">
         {/* cong */}
-        <div className="w-2/3 2xl:w-2/3">
+        <div className="w-full max-xl:order-0 xl:w-2/3">
           <Cong />
         </div>
 
         {/* box nums */}
-        <div className="w-1/3 flex-center 2xl:w-1/3">
+        <div className="flex-col xl:flex-row w-1/3 flex-center">
           <BoxInfo
-            ml={24}
+            ml={matchesXL ? 24 : 0}
+            mt={!matchesXL ? 24 : 0}
             Icon={
               <BiPieChartAlt
                 className="text-brand-green bg-brand-green/10 p-2 rounded-md"
                 size={38}
               />
             }
-            text={{ label: "Profit", value: "$14,829" }}
+            text={{
+              label: t("pages.main_page.box_info.profit"),
+              value: "$14,829",
+            }}
             change={72.8}
           />
           <BoxInfo
-            ml={24}
+            mt={!matchesXL ? 24 : 0}
+            ml={matchesXL ? 24 : 0}
             Icon={
               <BiWalletAlt
                 className="text-brand-blue bg-brand-blue/10 p-2 rounded-md"
                 size={38}
               />
             }
-            text={{ label: "Sales", value: "$4,999" }}
+            text={{
+              label: t("pages.main_page.box_info.sales"),
+              value: "$4,999",
+            }}
             change={28.34}
           />
         </div>
@@ -56,14 +68,15 @@ const MainPage = () => {
         {/* left charts */}
         <Box
           style={{ ...BgStyles(), ...shadowStyles(), ...TxtStyles() }}
-          className="w-2/3 flex mt-6 rounded-lg overflow-hidden"
+          className="w-full xl:w-2/3 max-xl:order-1 flex mt-6 rounded-lg overflow-hidden"
         >
           <Box
             style={{ ...BgStyles(), ...TxtStyles() }}
-            dir="ltr"
             className="w-2/3 p-6 pb-1"
           >
-            <h1 className="text-lg mb-4 font-bold">Total Revenue</h1>
+            <h1 className="text-lg mb-4 font-bold">
+              {t("pages.main_page.revenue")}
+            </h1>
             <RevenuChart />
           </Box>
           <Box
@@ -96,7 +109,7 @@ const MainPage = () => {
             </div>
             <GrowthChart />
             <p className="text-sm font-bold text-center mt-2">
-              62% Company Growth
+              62% {t("pages.main_page.growth")}
             </p>
             <div className="flex justify-around mt-6">
               <div className="flex-center">
@@ -124,7 +137,7 @@ const MainPage = () => {
         </Box>
 
         {/* right chart */}
-        <Box className="w-1/3  flex mt-6 flex-col">
+        <Box className="xl:w-1/3 w-2/3 max-xl:order-0 flex mt-6 flex-col">
           <Box className="grow flex-center">
             <BoxInfo
               ml={24}
@@ -134,7 +147,10 @@ const MainPage = () => {
                   size={38}
                 />
               }
-              text={{ label: "Payments", value: "$22,829" }}
+              text={{
+                label: t("pages.main_page.box_info.payments"),
+                value: "$22,829",
+              }}
               change={-8.4}
             />
             <BoxInfo
@@ -145,23 +161,26 @@ const MainPage = () => {
                   size={38}
                 />
               }
-              text={{ label: "Transactions", value: "$719" }}
+              text={{
+                label: t("pages.main_page.box_info.transactions"),
+                value: "$719",
+              }}
               change={-21}
             />
           </Box>
           <Box
             style={{ ...BgStyles(), ...TxtStyles(), ...shadowStyles() }}
             ml={24}
-            className="flex justify-between  p-6  mt-6 rounded-lg"
+            className="flex justify-between items-center  p-6 mt-6 rounded-lg"
           >
             <div className="w-1/2">
-              <h1 className="text-lg mb-2 text-brand-primary font-bold">
-                Profile report
+              <h1 className="text-lg mb-1 xl:mb-2 text-brand-primary font-bold">
+                {t("pages.main_page.profile_report")}
               </h1>
               <p className="text-xs w-fit font-bold text-brand-orange bg-brand-orange/10 rounded-full px-2 py-1">
-                YEAR 2022
+                {t("pages.main_page.year")} 2022
               </p>
-              <div className="text-xs flex items-center font-bold mt-6 text-brand-green">
+              <div className="text-sm flex items-center font-bold mt-2 xl:mt-6 text-brand-green">
                 <span className="text-md">
                   <AiOutlineArrowUp />
                 </span>

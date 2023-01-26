@@ -4,6 +4,7 @@ const ProfileReportChart = () => {
   return (
     <Chart
       type="line"
+      height={100}
       series={[
         {
           data: [0, 3, 1, 2, 1, 4],

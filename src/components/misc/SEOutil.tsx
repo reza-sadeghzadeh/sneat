@@ -2,7 +2,7 @@ import { useEffect } from "react"
 
 const SEOutil = ({ title }: { title: string }) => {
   useEffect(() => {
-    document.title = "SNEAT - " + title
+    document.title = "sneat | " + title
   }, [])
 
   return <></>

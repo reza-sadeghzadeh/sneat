@@ -96,7 +96,19 @@
         "header": "Congratulations John! 🎉",
         "message": " You have done 72% more sales today.Check your new badge in your profile.",
         "button": "View Budget"
-      }
+      },
+      "box_info": {
+        "profit": "Profit",
+        "sales": "Sales",
+        "payments": "Payments",
+        "transactions": "Transactions",
+        "view_more": "View More",
+        "details": "Details"
+      },
+      "revenue": "Total Revenue",
+      "growth": "Company Growth",
+      "profile_report": "Profile report",
+      "year": "YEAR"
     }
   }
 }

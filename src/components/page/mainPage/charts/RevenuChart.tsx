@@ -15,6 +15,7 @@ const RevenuChart = () => {
   ]
   return (
     <Chart
+      dir="ltr"
       height={300}
       type="bar"
       series={series}
