@@ -11,14 +11,16 @@ interface IBoxInfo {
     value: string
   }
   change: number
+  ml: number
 }
 
-const BoxInfo: FC<IBoxInfo> = ({ change, Icon, text }) => {
+const BoxInfo: FC<IBoxInfo> = ({ change, Icon, text, ml = 0 }) => {
   return (
     <Box
+      ml={ml}
       component={"div"}
       sx={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
-      className="p-6 w-full h-full rounded-lg 2xl:ml-6 flex-col flex justify-between"
+      className="p-6 2xl:p-6 w-full h-full min-h-fit rounded-lg flex-col flex justify-between"
     >
       <div className="flex justify-between items-center">
         {Icon}
@@ -47,10 +49,13 @@ const BoxInfo: FC<IBoxInfo> = ({ change, Icon, text }) => {
       </div>
       <div>
         <h4 className="text-light text-sm">{text.label}</h4>
-        <h1 className="text-3xl font-medium"> {text.value}</h1>
+        <h1 className="text-2xl xl:text-xl 2xl:text-2xl mt-0.5 font-medium">
+          {" "}
+          {text.value}
+        </h1>
       </div>
       <div
-        className={`text-xs flex items-center font-bold ${
+        className={`text-sm flex items-center font-bold ${
           change > 0 ? "text-brand-green" : "text-brand-red"
         }`}
       >
@@ -58,7 +63,7 @@ const BoxInfo: FC<IBoxInfo> = ({ change, Icon, text }) => {
           {change > 0 ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />}
         </span>
         <Box component="p" ml={3}>
-          {change > 0 ? "+" : "-"} {change}%
+          {change}%
         </Box>
       </div>
     </Box>

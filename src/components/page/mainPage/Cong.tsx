@@ -20,7 +20,7 @@ const Cong = () => {
         <p className="mt-3 text-sm leading-relaxed w-4/5">
           {t("pages.main_page.cong.message")}
         </p>
-        <button className="p-1.5 hover:text-white hover:bg-brand-primaryTextColor hover:shadow-lg transition-all rounded mt-6 text-xs text-brand-primaryTextColor border border-brand-primaryTextColor">
+        <button className="outline-btn">
           {t("pages.main_page.cong.button")}
         </button>
       </div>
