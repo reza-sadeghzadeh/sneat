@@ -1,12 +1,15 @@
-import { Box, Menu } from "@mantine/core"
+import { ActionIcon, Box, Menu } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
-import Chart from "react-apexcharts"
 import { useTranslation } from "react-i18next"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import {
   BiChevronDown,
+  BiCloset,
   BiCreditCard,
   BiDollar,
+  BiDotsVerticalRounded,
+  BiHomeAlt,
+  BiMobileAlt,
   BiPieChartAlt,
   BiWalletAlt,
 } from "react-icons/bi"
@@ -16,7 +19,9 @@ import BoxInfo from "../components/page/mainPage/BoxInfo"
 import GrowthChart from "../components/page/mainPage/charts/GrowthChart"
 import ProfileReportChart from "../components/page/mainPage/charts/ProfileReportChart"
 import RevenuChart from "../components/page/mainPage/charts/RevenuChart"
+import StatisticChart from "../components/page/mainPage/charts/StatisticChart"
 import Cong from "../components/page/mainPage/Cong"
+import DatafullLtem from "../components/page/mainPage/DatafullLtem"
 import { BgStyles, shadowStyles, TxtStyles } from "../utils"
 
 const MainPage = () => {
@@ -198,6 +203,111 @@ const MainPage = () => {
           </Box>
         </Box>
       </div>
+      <Box className="flex justify-center items-center mt-6">
+        {/* order statistics */}
+
+        <Box
+          className="p-6 w-full rounded-lg"
+          style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
+        >
+          {/* <h1 className="text-lg font-bold">{t("pages.main_page.revenue")}</h1> */}
+          <h1 className="text-lg font-medium">Order Statistics</h1>
+          <div className="flex justify-between items-center">
+            <p className="text-sm opacity-80">42.82k Total Sales</p>
+            <Menu
+              transition="pop-top-right"
+              position="bottom-end"
+              shadow="md"
+              width={200}
+              styles={{
+                item: {
+                  ...TxtStyles(),
+                },
+              }}
+            >
+              <Menu.Target>
+                <ActionIcon>
+                  <BiDotsVerticalRounded size={20} />
+                </ActionIcon>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                <Menu.Item>{t("pages.main_page.box_info.view_more")}</Menu.Item>
+                <Menu.Item>{t("pages.main_page.box_info.details")}</Menu.Item>
+                <Menu.Item>{t("pages.main_page.box_info.details")}</Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </div>
+          {/* first column */}
+          <div className="flex justify-between mt-2">
+            <div>
+              <h1 className="text-4xl font-medium mt-12">8,258</h1>
+              <p className="mt-2  text-brand-primary">Total Orders</p>
+            </div>
+            <StatisticChart />
+          </div>
+          <Box mt={24} component="ul">
+            <DatafullLtem
+              detail="Mobile, Earbuds, TV"
+              icon={
+                <BiMobileAlt
+                  className="text-brand-primaryTextColor bg-brand-primaryTextColor/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Electronic"
+              key={1}
+              sell="82.5k"
+            />
+            <DatafullLtem
+              detail="T-shirt, Jeans, Shoes"
+              icon={
+                <BiCloset
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Fashion"
+              key={1}
+              sell="82.5k"
+            />
+            <DatafullLtem
+              detail="Mobile, Earbuds, TV"
+              icon={
+                <BiHomeAlt
+                  className="text-brand-blue bg-brand-blue/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Electronic"
+              key={1}
+              sell="82.5k"
+            />
+            <DatafullLtem
+              detail="Mobile, Earbuds, TV"
+              icon={
+                <BiPieChartAlt
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Electronic"
+              key={1}
+              sell="82.5k"
+            />
+          </Box>
+        </Box>
+        {/* void */}
+        <Box
+          className="p-6 w-full rounded-lg"
+          style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
+        ></Box>
+        {/* void */}
+        <Box
+          className="p-6 w-full rounded-lg"
+          style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
+        ></Box>
+      </Box>
     </>
   )
 }
