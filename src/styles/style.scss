@@ -129,3 +129,25 @@ html[dir="rtl"] {
 .main-shadow {
   box-shadow: 1px 3px 9px 1px rgb(161 172 184 / 15%);
 }
+
+.mantine-Tabs-tab {
+  @apply rounded  mr-4  border-0;
+
+  &[data-active] {
+    @apply shadow-lg;
+
+    background-color: theme("colors.brand.primaryTextColor") !important;
+    color: white;
+  }
+}
+.mantine-rtl-Tabs-tab {
+  border-radius: 0.25rem !important;
+  margin-left: 1rem !important;
+
+  &[data-active] {
+    @apply shadow-lg;
+
+    background-color: theme("colors.brand.primaryTextColor") !important;
+    color: white !important;
+  }
+}

@@ -18,11 +18,13 @@ import { GrPaypal } from "react-icons/gr"
 import SEOutil from "../components/misc/SEOutil"
 import BoxInfo from "../components/page/mainPage/BoxInfo"
 import GrowthChart from "../components/page/mainPage/charts/GrowthChart"
+import LineChart from "../components/page/mainPage/charts/LineChart"
 import ProfileReportChart from "../components/page/mainPage/charts/ProfileReportChart"
 import RevenuChart from "../components/page/mainPage/charts/RevenuChart"
 import StatisticChart from "../components/page/mainPage/charts/StatisticChart"
 import Cong from "../components/page/mainPage/Cong"
 import DatafullLtem from "../components/page/mainPage/DatafullLtem"
+import RadialChart from "../components/page/mainPage/charts/RadialChart"
 import { BgStyles, shadowStyles, TxtStyles } from "../utils"
 
 const MainPage = () => {
@@ -206,9 +208,8 @@ const MainPage = () => {
           </Box>
         </Box>
       </div>
-      <Box className="flex justify-center items-center mt-6">
+      <Box className="flex justify-center mt-6">
         {/* order statistics */}
-
         <Box
           className="p-6 w-full rounded-lg"
           style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
@@ -296,16 +297,33 @@ const MainPage = () => {
             />
           </Box>
         </Box>
-        {/* void */}
+
+        {/* tabs */}
         <Box
-          className="p-6 w-full rounded-lg grow h-full"
+          className="w-full overflow-hidden mx-6 rounded-lg grow"
           style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
         >
           <Tabs
             keepMounted={false}
             activateTabWithKeyboard={true}
             defaultValue="income"
-            styles={{}}
+            classNames={{
+              tabsList: "p-6",
+            }}
+            styles={{
+              panel: {
+                marginTop: "2rem",
+              },
+              tabsList: {
+                border: 0,
+                padding: 0,
+              },
+              tab: {
+                border: "none",
+                padding: "0.8rem 1rem",
+                fontSize: "0.9rem",
+              },
+            }}
             onTabChange={setActiveTab}
             value={activeTab}
           >
@@ -315,11 +333,51 @@ const MainPage = () => {
               <Tabs.Tab value="profit">Profit</Tabs.Tab>
             </Tabs.List>
 
-            <Tabs.Panel value="income">First panel</Tabs.Panel>
+            <Tabs.Panel value="income">
+              <Box className="flex justify-start items-center px-6">
+                <BiPieChartAlt
+                  className="text-brand-primaryTextColor bg-brand-primaryTextColor/10 p-2 rounded-md"
+                  size={38}
+                />
+                <Box ml={16}>
+                  <p className="text-xs">Total balance</p>
+                  <div className="flex">
+                    <h4 className="text-sm font-bold">$459.10</h4>
+                    <Box
+                      ml={8}
+                      className={`text-xs flex items-center font-bold text-brand-green`}
+                    >
+                      <span className="text-md">
+                        <AiOutlineArrowUp />
+                      </span>
+                      <Box component="p" ml={3}>
+                        45.7%
+                      </Box>
+                    </Box>
+                  </div>
+                </Box>
+              </Box>
+              <Box
+                style={{
+                  transform: "translateX(-14px)",
+                }}
+              >
+                <LineChart />
+              </Box>
+              <Box className="flex-center mt-2">
+                <RadialChart />
+                <div>
+                  <h5 className="text-sm">Expenses This Week</h5>
+                  <p className="text-xs opacity-75">$39 less than last week</p>
+                </div>
+              </Box>
+            </Tabs.Panel>
             <Tabs.Panel value="expens">Second panel</Tabs.Panel>
             <Tabs.Panel value="profit">Second panel</Tabs.Panel>
           </Tabs>
         </Box>
+        {/* void */}
+        <Box className="w-full overflow-hidden mx-6 rounded-lg grow"></Box>
       </Box>
     </>
   )
