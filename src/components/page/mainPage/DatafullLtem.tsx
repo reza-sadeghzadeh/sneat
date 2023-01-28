@@ -9,12 +9,12 @@ interface IDatafullItem {
 }
 const DatafullLtem: FC<IDatafullItem> = ({ detail, icon, label, sell }) => {
   return (
-    <li className="flex py-4 justify-between items-center">
+    <li className="flex py-2 justify-between items-center">
       <div className="flex-center">
         {icon}
         <Box component="div" ml={16}>
-          <h4 className="font-semibold"> {label}</h4>
-          <p className="text-sm opacity-75">{detail}</p>
+          <h4 className="font-semibold text-sm"> {label}</h4>
+          <p className="text-xs mt-1 opacity-75">{detail}</p>
         </Box>
       </div>
       <span className="text-sm">{sell}</span>

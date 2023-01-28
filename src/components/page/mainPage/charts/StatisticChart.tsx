@@ -34,8 +34,8 @@ const StatisticChart = () => {
           width: 4,
         },
         chart: {
-          height: 120,
-          width: 130,
+          height: 110,
+          width: 120,
           type: "donut",
         },
 

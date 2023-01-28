@@ -1,5 +1,6 @@
-import { ActionIcon, Box, Menu } from "@mantine/core"
+import { ActionIcon, Box, Menu, Tabs } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import {
@@ -27,6 +28,8 @@ import { BgStyles, shadowStyles, TxtStyles } from "../utils"
 const MainPage = () => {
   const matchesXL = useMediaQuery("(min-width:1280px)")
   const { t } = useTranslation()
+  const [activeTab, setActiveTab] = useState<string | null>("income")
+
   return (
     <>
       <SEOutil title="Dashboard" />
@@ -238,7 +241,7 @@ const MainPage = () => {
               </Menu.Dropdown>
             </Menu>
           </div>
-          {/* first column */}
+
           <div className="flex justify-between mt-2">
             <div>
               <h1 className="text-4xl font-medium mt-12">8,258</h1>
@@ -256,7 +259,6 @@ const MainPage = () => {
                 />
               }
               label="Electronic"
-              key={1}
               sell="82.5k"
             />
             <DatafullLtem
@@ -268,45 +270,56 @@ const MainPage = () => {
                 />
               }
               label="Fashion"
-              key={1}
               sell="82.5k"
             />
             <DatafullLtem
-              detail="Mobile, Earbuds, TV"
+              detail="T-shirt, Jeans, Shoes"
               icon={
                 <BiHomeAlt
                   className="text-brand-blue bg-brand-blue/10 p-2 rounded-md"
                   size={38}
                 />
               }
-              label="Electronic"
-              key={1}
+              label="Fashion"
               sell="82.5k"
             />
             <DatafullLtem
-              detail="Mobile, Earbuds, TV"
+              detail="Football, Cricket Kit"
               icon={
                 <BiPieChartAlt
                   className="text-brand-green bg-brand-green/10 p-2 rounded-md"
                   size={38}
                 />
               }
-              label="Electronic"
-              key={1}
-              sell="82.5k"
+              label="Sports"
+              sell="46"
             />
           </Box>
         </Box>
         {/* void */}
         <Box
-          className="p-6 w-full rounded-lg"
+          className="p-6 w-full rounded-lg grow h-full"
           style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
-        ></Box>
-        {/* void */}
-        <Box
-          className="p-6 w-full rounded-lg"
-          style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
-        ></Box>
+        >
+          <Tabs
+            keepMounted={false}
+            activateTabWithKeyboard={true}
+            defaultValue="income"
+            styles={{}}
+            onTabChange={setActiveTab}
+            value={activeTab}
+          >
+            <Tabs.List>
+              <Tabs.Tab value="income">Income</Tabs.Tab>
+              <Tabs.Tab value="expens">Expenses</Tabs.Tab>
+              <Tabs.Tab value="profit">Profit</Tabs.Tab>
+            </Tabs.List>
+
+            <Tabs.Panel value="income">First panel</Tabs.Panel>
+            <Tabs.Panel value="expens">Second panel</Tabs.Panel>
+            <Tabs.Panel value="profit">Second panel</Tabs.Panel>
+          </Tabs>
+        </Box>
       </Box>
     </>
   )
