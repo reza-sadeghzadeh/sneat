@@ -6,13 +6,26 @@ interface IDatafullItem {
   label: string
   detail: string
   sell: string
+  switchLabelPosition?: boolean
 }
-const DatafullLtem: FC<IDatafullItem> = ({ detail, icon, label, sell }) => {
+const DatafullLtem: FC<IDatafullItem> = ({
+  detail,
+  icon,
+  label,
+  sell,
+  switchLabelPosition = false,
+}) => {
   return (
-    <li className="flex py-2 justify-between items-center">
+    <li className="flex pt-8 justify-between items-center">
       <div className="flex-center">
         {icon}
-        <Box component="div" ml={16}>
+        <Box
+          className={`flex ${
+            switchLabelPosition ? "flex-col-reverse" : "flex-col"
+          }`}
+          component="div"
+          ml={16}
+        >
           <h4 className="font-semibold text-sm"> {label}</h4>
           <p className="text-xs mt-1 opacity-75">{detail}</p>
         </Box>

@@ -4,7 +4,7 @@ import Chart from "react-apexcharts"
 const LineChart = () => {
   return (
     <Chart
-      height={260}
+      height={300}
       series={[
         {
           name: "Sells",

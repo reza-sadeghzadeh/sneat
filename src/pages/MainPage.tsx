@@ -209,9 +209,9 @@ const MainPage = () => {
         </Box>
       </div>
       <Box className="flex justify-center mt-6">
-        {/* order statistics */}
+        {/* order statistics #1 */}
         <Box
-          className="p-6 w-full rounded-lg"
+          className="p-6 w-full rounded-lg flex flex-col justify-between "
           style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
         >
           {/* <h1 className="text-lg font-bold">{t("pages.main_page.revenue")}</h1> */}
@@ -250,7 +250,7 @@ const MainPage = () => {
             </div>
             <StatisticChart />
           </div>
-          <Box mt={24} component="ul">
+          <Box mt={12} component="ul">
             <DatafullLtem
               detail="Mobile, Earbuds, TV"
               icon={
@@ -260,7 +260,7 @@ const MainPage = () => {
                 />
               }
               label="Electronic"
-              sell="82.5k"
+              sell="82.5k USD"
             />
             <DatafullLtem
               detail="T-shirt, Jeans, Shoes"
@@ -271,7 +271,7 @@ const MainPage = () => {
                 />
               }
               label="Fashion"
-              sell="82.5k"
+              sell="82.5k USD"
             />
             <DatafullLtem
               detail="T-shirt, Jeans, Shoes"
@@ -282,7 +282,7 @@ const MainPage = () => {
                 />
               }
               label="Fashion"
-              sell="82.5k"
+              sell="82.5k USD"
             />
             <DatafullLtem
               detail="Football, Cricket Kit"
@@ -293,12 +293,12 @@ const MainPage = () => {
                 />
               }
               label="Sports"
-              sell="46"
+              sell="46 USD"
             />
           </Box>
         </Box>
 
-        {/* tabs */}
+        {/* tabs #2 */}
         <Box
           className="w-full overflow-hidden mx-6 rounded-lg grow"
           style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
@@ -333,7 +333,10 @@ const MainPage = () => {
               <Tabs.Tab value="profit">Profit</Tabs.Tab>
             </Tabs.List>
 
-            <Tabs.Panel value="income">
+            <Tabs.Panel
+              value="income"
+              className=" flex flex-col justify-between h-full"
+            >
               <Box className="flex justify-start items-center px-6">
                 <BiPieChartAlt
                   className="text-brand-primaryTextColor bg-brand-primaryTextColor/10 p-2 rounded-md"
@@ -364,7 +367,7 @@ const MainPage = () => {
               >
                 <LineChart />
               </Box>
-              <Box className="flex-center mt-2">
+              <Box className="flex-center mt-6">
                 <RadialChart />
                 <div>
                   <h5 className="text-sm">Expenses This Week</h5>
@@ -376,8 +379,128 @@ const MainPage = () => {
             <Tabs.Panel value="profit">Second panel</Tabs.Panel>
           </Tabs>
         </Box>
-        {/* void */}
-        <Box className="w-full overflow-hidden mx-6 rounded-lg grow"></Box>
+        {/* transactions #3 */}
+        <Box
+          style={{ ...shadowStyles(), ...TxtStyles(), ...BgStyles() }}
+          className="w-full overflow-hidden rounded-lg grow flex flex-col justify-between py-6"
+        >
+          <div className="flex justify-between px-6 ">
+            <h1 className="text-lg font-medium">Transactions</h1>
+            <Menu
+              transition="pop-top-right"
+              position="bottom-end"
+              shadow="md"
+              width={200}
+              styles={{
+                item: {
+                  ...TxtStyles(),
+                },
+              }}
+            >
+              <Menu.Target>
+                <ActionIcon>
+                  <BiDotsVerticalRounded size={20} />
+                </ActionIcon>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                {/* <Menu.Item>{t("pages.main_page.box_info.view_more")}</Menu.Item>
+                <Menu.Item>{t("pages.main_page.box_info.details")}</Menu.Item>
+                <Menu.Item>{t("pages.main_page.box_info.details")}</Menu.Item> */}
+                <Menu.Item> Last 28 days </Menu.Item>
+                <Menu.Item> Last month </Menu.Item>
+                <Menu.Item> Last Year </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </div>
+          <Box px={24} component="ul">
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="Mobile, Earbuds, TV"
+              icon={
+                <BiMobileAlt
+                  className="text-brand-primaryTextColor bg-brand-primaryTextColor/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Electronic"
+              sell="82.5k USD"
+            />
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="Mobile, Earbuds, TV"
+              icon={
+                <BiMobileAlt
+                  className="text-brand-primaryTextColor bg-brand-primaryTextColor/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Electronic"
+              sell="82.5k USD"
+            />
+
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="T-shirt, Jeans, Shoes"
+              icon={
+                <BiCloset
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Fashion"
+              sell="82.5k USD"
+            />
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="T-shirt, Jeans, Shoes"
+              icon={
+                <BiCloset
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Fashion"
+              sell="82.5k USD"
+            />
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="T-shirt, Jeans, Shoes"
+              icon={
+                <BiCloset
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Fashion"
+              sell="82.5k USD"
+            />
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="T-shirt, Jeans, Shoes"
+              icon={
+                <BiHomeAlt
+                  className="text-brand-blue bg-brand-blue/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Fashion"
+              sell="82.5k USD"
+            />
+            <DatafullLtem
+              switchLabelPosition={true}
+              detail="Football, Cricket Kit"
+              icon={
+                <BiPieChartAlt
+                  className="text-brand-green bg-brand-green/10 p-2 rounded-md"
+                  size={38}
+                />
+              }
+              label="Sports"
+              sell="46 USD"
+            />
+          </Box>
+        </Box>
       </Box>
     </>
   )
