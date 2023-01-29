@@ -49,7 +49,7 @@ const StatisticChart = () => {
                   fontSize: "26px",
                   color: "#696cff",
                   offsetY: -15,
-                  formatter: function (val) {
+                  formatter: function (val: string) {
                     return parseInt(val) + "%"
                   },
                 },
@@ -62,7 +62,7 @@ const StatisticChart = () => {
 
                   color: "#697a8d",
                   label: "Weekly",
-                  formatter: function (w) {
+                  formatter: function () {
                     return "38%"
                   },
                 },
