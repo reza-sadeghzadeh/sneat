@@ -85,13 +85,13 @@ const SearchHeader: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
             padding: "0.8rem 0.6rem",
             fontSize: "0.9rem",
             ...TxtStyles(),
+            ...BgStyles(),
           },
         }}
         transition="pop-top-right"
         position="bottom-end"
         shadow="md"
         width={150}
-        classNames={{ itemLabel: "text-brand-primary" }}
       >
         <Menu.Target>
           <Box

@@ -143,11 +143,26 @@ html[dir="rtl"] {
 .mantine-rtl-Tabs-tab {
   border-radius: 0.25rem !important;
   margin-left: 1rem !important;
+  @apply m-6;
 
   &[data-active] {
     @apply shadow-lg;
 
     background-color: theme("colors.brand.primaryTextColor") !important;
     color: white !important;
+  }
+}
+html[dir="rtl"] {
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    background-color: transparent;
+    background-image: none;
+  }
+}
+html[dir="rtl"] {
+  button[data-hovered] {
+    background-color: rgba(95, 100, 114, 0.35);
   }
 }

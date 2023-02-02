@@ -1,8 +1,10 @@
+import { useMantineTheme } from "@mantine/core"
 import Chart from "react-apexcharts"
 import { useDarkMode } from "../../../../hooks"
 
 const RevenuChart = () => {
   const { colorScheme } = useDarkMode()
+  const theme = useMantineTheme()
   const series = [
     {
       name: "2022",
@@ -107,7 +109,7 @@ const RevenuChart = () => {
         stroke: {
           width: 8,
           curve: "smooth",
-          colors: colorScheme === "dark" ? ["#2a2b31"] : ["white"],
+          colors: colorScheme === "dark" ? [theme.colors.dark[0]] : ["white"],
           lineCap: "round",
         },
         dataLabels: {
