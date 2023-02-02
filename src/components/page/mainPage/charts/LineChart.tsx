@@ -1,7 +1,8 @@
-import React from "react"
 import Chart from "react-apexcharts"
+import { useDarkMode } from "../../../../hooks"
 
 const LineChart = () => {
+  const { colorScheme } = useDarkMode()
   return (
     <Chart
       height={300}
@@ -43,6 +44,8 @@ const LineChart = () => {
       options={{
         chart: {
           type: "area",
+          background: "transparent",
+
           offsetX: 0,
           parentHeightOffset: 0,
           //   parentWidthOffset: 0,
@@ -51,9 +54,12 @@ const LineChart = () => {
           },
           stackType: "normal",
         },
+        theme: {
+          mode: colorScheme === "dark" ? "dark" : "light",
+        },
         grid: {
           strokeDashArray: 3,
-          borderColor: "#f5f5f9",
+          // borderColor: "primary",
         },
         stroke: {
           width: 2,
@@ -67,7 +73,7 @@ const LineChart = () => {
         xaxis: {
           labels: {
             style: {
-              colors: ["gray"],
+              colors: ["white"],
               fontWeight: "medium",
             },
           },

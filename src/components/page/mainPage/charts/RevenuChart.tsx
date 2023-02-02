@@ -109,7 +109,7 @@ const RevenuChart = () => {
         stroke: {
           width: 8,
           curve: "smooth",
-          colors: colorScheme === "dark" ? [theme.colors.dark[0]] : ["white"],
+          colors: colorScheme === "dark" ? [theme.colors.dark[7]] : ["white"],
           lineCap: "round",
         },
         dataLabels: {

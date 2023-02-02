@@ -375,8 +375,12 @@ const MainPage = () => {
                 </div>
               </Box>
             </Tabs.Panel>
-            <Tabs.Panel value="expens">Second panel</Tabs.Panel>
-            <Tabs.Panel value="profit">Second panel</Tabs.Panel>
+            <Tabs.Panel className="px-6" value="expens">
+              Nothing planned for here!
+            </Tabs.Panel>
+            <Tabs.Panel className="px-6" value="profit">
+              Nothing planned for here also!
+            </Tabs.Panel>
           </Tabs>
         </Box>
         {/* transactions #3 */}

@@ -1,6 +1,6 @@
 import { ColorScheme, ColorSchemeProvider } from "@mantine/core"
 import { useColorScheme, useLocalStorage } from "@mantine/hooks"
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 
 interface IColorSchemeContext {
   toggleColorScheme: Function
@@ -10,6 +10,8 @@ interface IColorSchemeContext {
 export const ColorSchemeContext = createContext<Partial<IColorSchemeContext>>(
   {}
 )
+
+const DARK_MODE_CLASS_NAME = "dark-mode"
 
 export const ColorSchemeContextProvider = ({
   children,
@@ -21,6 +23,13 @@ export const ColorSchemeContextProvider = ({
     defaultValue: "light",
     getInitialValueInEffect: true,
   })
+
+  // performance penalty here!
+  useEffect(() => {
+    if (colorScheme === "dark")
+      document.body.classList.add(DARK_MODE_CLASS_NAME)
+    else document.body.classList.remove(DARK_MODE_CLASS_NAME)
+  }, [colorScheme])
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"))

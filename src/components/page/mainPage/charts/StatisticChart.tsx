@@ -1,6 +1,11 @@
+import { useMantineTheme } from "@mantine/core"
+import { useColorScheme } from "@mantine/hooks"
 import Chart from "react-apexcharts"
+import { useDarkMode } from "../../../../hooks"
 
 const StatisticChart = () => {
+  const { colorScheme } = useDarkMode()
+  const theme = useMantineTheme()
   const data = {
     series: [44, 55, 13, 33],
     labels: ["Electronic", "Sports", "Decor", "Fashion"],
@@ -32,6 +37,7 @@ const StatisticChart = () => {
         },
         stroke: {
           width: 4,
+          colors: colorScheme === "dark" ? [theme.colors.dark[7]] : ["white"],
         },
         chart: {
           height: 110,

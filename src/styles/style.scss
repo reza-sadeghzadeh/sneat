@@ -153,16 +153,20 @@ html[dir="rtl"] {
   }
 }
 html[dir="rtl"] {
-  button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
-    background-color: transparent;
-    background-image: none;
+  body.dark-mode {
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      background-color: transparent;
+      background-image: none;
+    }
   }
 }
 html[dir="rtl"] {
-  button[data-hovered] {
-    background-color: rgba(95, 100, 114, 0.35);
+  body.dark-mode {
+    button[data-hovered] {
+      background-color: rgba(95, 100, 114, 0.35);
+    }
   }
 }
