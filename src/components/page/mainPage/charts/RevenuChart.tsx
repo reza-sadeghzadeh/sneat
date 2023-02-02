@@ -25,6 +25,7 @@ const RevenuChart = () => {
         chart: {
           // background: ,
           stacked: true, // puts the bar on top eachother
+
           toolbar: {
             offsetX: 10,
 
@@ -50,7 +51,7 @@ const RevenuChart = () => {
           },
         },
         theme: {
-          mode: "light",
+          mode: colorScheme === "dark" ? "dark" : "light",
           palette: "white",
         },
         legend: {
@@ -77,15 +78,18 @@ const RevenuChart = () => {
             style: {
               fontFamily: "Inter",
               fontWeight: "semibold",
-              colors: [
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-              ],
+              colors:
+                colorScheme === "dark"
+                  ? [
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                    ]
+                  : [],
             },
           },
         },
@@ -94,15 +98,18 @@ const RevenuChart = () => {
             style: {
               fontFamily: "Inter",
               fontWeight: "semibold",
-              colors: [
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-                "#697a8d",
-              ],
+              colors:
+                colorScheme === "dark"
+                  ? [
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                    ]
+                  : [],
             },
           },
         },
@@ -117,7 +124,7 @@ const RevenuChart = () => {
         },
         grid: {
           // show: false,
-          borderColor: "#f5f5f5",
+          // borderColor: "#f5f5f5",
         },
 
         colors: ["#696cff", "rgba(3, 195, 236)"],
@@ -132,12 +139,12 @@ const RevenuChart = () => {
         },
         responsive: [
           {
-            breakpoint: 1700,
+            breakpoint: 5000,
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 8,
-                  columnWidth: "32%",
+                  borderRadius: 9,
+                  columnWidth: "40%",
                 },
               },
             },
@@ -147,8 +154,8 @@ const RevenuChart = () => {
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 7,
-                  columnWidth: "35%",
+                  borderRadius: 8,
+                  columnWidth: "50%",
                 },
               },
             },
@@ -159,7 +166,18 @@ const RevenuChart = () => {
               plotOptions: {
                 bar: {
                   borderRadius: 7,
-                  columnWidth: "42%",
+                  columnWidth: "55%",
+                },
+              },
+            },
+          },
+          {
+            breakpoint: 1350,
+            options: {
+              plotOptions: {
+                bar: {
+                  borderRadius: 7,
+                  columnWidth: "60%",
                 },
               },
             },
@@ -169,8 +187,19 @@ const RevenuChart = () => {
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 7,
-                  columnWidth: "48%",
+                  borderRadius: 8,
+                  columnWidth: "70%",
+                },
+              },
+            },
+          },
+          {
+            breakpoint: 1280,
+            options: {
+              plotOptions: {
+                bar: {
+                  borderRadius: 10,
+                  columnWidth: "40%",
                 },
               },
             },
@@ -180,8 +209,8 @@ const RevenuChart = () => {
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 7,
-                  columnWidth: "40%",
+                  borderRadius: 9,
+                  columnWidth: "35%",
                 },
               },
             },
@@ -192,19 +221,30 @@ const RevenuChart = () => {
               plotOptions: {
                 bar: {
                   borderRadius: 8,
-                  columnWidth: "48%",
+                  columnWidth: "35%",
                 },
               },
             },
           },
 
           {
-            breakpoint: 840,
+            breakpoint: 970,
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 10,
-                  columnWidth: "35%",
+                  borderRadius: 9,
+                  columnWidth: "40%",
+                },
+              },
+            },
+          },
+          {
+            breakpoint: 870,
+            options: {
+              plotOptions: {
+                bar: {
+                  borderRadius: 8,
+                  columnWidth: "50%",
                 },
               },
             },
@@ -214,19 +254,19 @@ const RevenuChart = () => {
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 10,
-                  columnWidth: "28%",
+                  borderRadius: 8,
+                  columnWidth: "65%",
                 },
               },
             },
           },
           {
-            breakpoint: 640,
+            breakpoint: 680,
             options: {
               plotOptions: {
                 bar: {
-                  borderRadius: 10,
-                  columnWidth: "32%",
+                  borderRadius: 8,
+                  columnWidth: "80%",
                 },
               },
             },

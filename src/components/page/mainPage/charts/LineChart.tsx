@@ -45,10 +45,15 @@ const LineChart = () => {
         chart: {
           type: "area",
           background: "transparent",
-
+          dropShadow: {
+            color: "#696cff",
+            opacity: 0.15,
+            blur: 2,
+            enabled: true,
+            top: 1,
+          },
           offsetX: 0,
           parentHeightOffset: 0,
-          //   parentWidthOffset: 0,
           toolbar: {
             show: false,
           },
@@ -59,7 +64,7 @@ const LineChart = () => {
         },
         grid: {
           strokeDashArray: 3,
-          // borderColor: "primary",
+          borderColor: colorScheme === "dark" ? "#697a8d" : "#f5f5f5",
         },
         stroke: {
           width: 2,
@@ -73,7 +78,18 @@ const LineChart = () => {
         xaxis: {
           labels: {
             style: {
-              colors: ["white"],
+              colors:
+                colorScheme === "dark"
+                  ? [
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                      "#697a8d",
+                    ]
+                  : [],
               fontWeight: "medium",
             },
           },
