@@ -55,6 +55,9 @@
 .nav-item-link-holder {
   @apply pr-4 rtl:pr-0 rtl:pl-4 font-medium relative;
 }
+.transition-sidenav {
+  transition: left 0.5s ease;
+}
 
 .nav-item.active::after {
   content: "";

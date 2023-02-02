@@ -39,7 +39,7 @@ const SideNav: React.FC<SearchHeaderProps> = ({ menuToggle }) => {
       }}
       width={{ base: 260 }}
       hiddenBreakpoint="lg"
-      className="shadow border-none transition-all"
+      className="shadow border-none transition-sidenav"
     >
       <LogoSec />
       <DrawerCloser setOpened={menuToggle.setOpened} />
